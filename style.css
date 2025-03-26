@@ -1,0 +1,671 @@
+/*
+    Základná úprava
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pond5.com/computer-coding-background-footage-090890180_prevstill.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 1.5% 5%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 70%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    border-color: #00ffcc;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    border-color: #00ffcc;
+    opacity: 0.5;
+    color: #00ffcc;
+    font-size: 18px;
+}
+
+td {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.proficient {
+    color: #008000;
+    font-weight: bold;
+}
+
+.moderate {
+    color: #e68a00;
+    font-weight: bold;
+}
+
+.novice {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+/*
+    Tu som nastavil scroll na smooth čo spravý aby animácia počas prechádzania stránky bola plinulá
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+    Hlavný blok v ktorom sú vložené ostatné bloky
+*/
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding: 10%;
+    margin-top: 0px;
+}
+
+/*
+    Blok s úvodným textom
+*/
+
+.welcome {
+    padding: 5%;
+    border-radius: 2%;
+    text-align: center;
+    width: 45%;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+#welcome_animation {
+    animation: smooth_appear 2s ease-out;
+}
+
+@keyframes smooth_appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/*
+    Animácia obrázku
+*/
+
+#image_animation {
+    animation: fly-in 2s ease-out forwards;
+}
+
+@keyframes fly-in {
+    from {
+        transform: translateY(130%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1; 
+    }
+}
+  
+/*
+    Nastavenie blokov
+*/
+
+.d1, .d2 {
+    position: relative;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5%;
+    text-align: center;
+    border-radius: 2%;
+    box-shadow: 0px 0px 5% rgba(0, 255, 200, 0.6);
+    width: 45%;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    animation: smooth_appear 2.3s ease-out;
+}
+
+.d3, .d4 {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5%;
+    text-align: center;
+    border-radius: 2%;
+    box-shadow: 0px 0px 5% rgba(0, 255, 200, 0.6);
+    width: 90%;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    animation: smooth_appear 3s ease-out;
+}
+
+.toshiba_image {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.form {
+    display: flex;
+    float: right;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    padding-left: 3%;
+    padding-right: 30%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 0px;
+    columns: 1;
+}
+.form h1 {
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+.form .send_button {
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+}
+
+input {
+    margin: 1%;
+    margin-bottom: 5%;
+}
+
+/*
+    Túto časť z css mám z "uiverse.io"
+    Poteboval som pekne vyzerajúce tlačidlá na sociálne siete
+*/
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fly-in 1.5s ease-out;
+}
+
+.socials .icon-content {
+    margin: 0 10px;
+    position: relative;
+}
+
+.socials .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.socials .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+.socials .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.socials .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.socials .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.socials .icon-content a:hover {
+    color: white;
+}
+
+.socials .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.socials .icon-content a:hover .filled {
+    height: 100%;
+}
+
+.socials .icon-content a[data-social="github"] .filled,
+.socials .icon-content a[data-social="github"] ~ .tooltip {
+    background-color: #24262a;
+}
+
+.socials .icon-content a[data-social="instagram"] .filled,
+.socials .icon-content a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+}
+
+.socials .icon-content a[data-social="youtube"] .filled,
+.socials .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/*
+    Toto je tlačidlo ktoré som spravl na vrátenie do index.html a na začiatok stánky
+    Animácie som si naštudoval z W3Schools.
+*/
+
+.dmolda_button {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00ffcc;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid #00ffcc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.dmolda_button:hover {
+    background-color: #00ffcc;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/*
+    Toto dropdown menu som si pozeral taktiež na W3Schools
+*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    padding: 10px 20px;
+    background: none;
+    color: #00ffcc;
+    border: 2px solid #00ffcc;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.dropdown-button:hover {
+    background-color: #00ffcc;
+    color: #000;
+    transform: scale(1.1);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 5px;
+    width: 100%;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: #00ffcc;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #00ffcc;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #00ffcc;
+    color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*
+    Foto galéria
+*/
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item .center-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-item .center-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0;
+    transition: transform 0.3s;
+}
+
+.gallery-item .center-image img:hover {
+    transform: scale(1.05);
+}
+
+/*
+    Dizajn Feedback z uiverse.io
+*/
+
+.form-container {
+    width: 400px;
+    background: linear-gradient(rgb(55, 55, 55),rgb(55, 55, 55)) padding-box,
+                linear-gradient(145deg, transparent 35%, #00ffcc, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 16px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 2px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background-size: 200% 100%;
+    animation: gradient 5s ease infinite;
+    animation: fly-in 1.3s ease-out;
+}
+  
+@keyframes gradient {
+    0% {
+    background-position: 0% 50%;
+    }
+
+    50% {
+    background-position: 100% 50%;
+    }
+
+    100% {
+    background-position: 0% 50%;
+    }
+}
+
+.form-container button:active {
+    scale: 0.95;
+}
+
+.form-container .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.form-container .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.form-container .form-group input,
+.form-container .form-group textarea {
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #414141;
+    background-color: transparent;
+    color: #fff;
+    font-family: inherit;
+    resize: none;
+    display: block;
+}
+
+.form-container .form-group input {
+    height: 48px;
+}
+
+.form-container .form-submit-btn {
+    align-self: flex-start;
+}
+
+
+.form-container .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    resize: none;
+    color: #fff;
+    height: 96px;
+    border: 1px solid #414141;
+    background-color: transparent;
+    font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+    opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+    outline: none;
+    border-color: #00ffcc;
+}
+
+.form-container .form-group textarea:focus {
+    outline: none;
+    border-color: #00ffcc;
+}
+
+.form-container .form-submit-btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-self: flex-start;
+    font-family: inherit;
+    color: #717171;
+    font-weight: 600;
+    width: 40%;
+    background: #313131;
+    border: 1px solid #414141;
+    padding: 12px 16px;
+    font-size: inherit;
+    gap: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/*
+    Nastavenie stĺpcov galérie
+*/
+@media (max-width: 1024px) {
+    .gallery-item {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%;
+    }
+
+    .gallery-item .center-image img {
+        max-width: 100%;
+    }
+}
+
+/* 
+    Päta stránky
+*/
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 1.5% 5%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+/*
+    Responzívny dizajn 
+*/
+@media (max-width: 768px) {
+    .main {
+        padding: 5%;
+        margin-top: 80px;
+    }
+
+    .welcome, .d1, .d2, .d3, .d4 {
+        width: 90%;
+        font-size: 1.3rem;
+    }
+
+    .dmolda_button {
+        font-size: 1.5rem;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .main {
+        padding: 3%;
+        margin-top: 60px;
+    }
+
+    .welcome, .d1, .d2, .d3, .d4 {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    nav {
+        padding: 2% 5%;
+    }
+
+    .dropdown-button {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    .dmolda_button {
+        font-size: 1.2rem;
+        padding: 6px 10px;
+    }
+
+    .gallery-item img {
+        padding: 2%;
+        border-radius: 10%;
+    }
+}
