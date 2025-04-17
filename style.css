@@ -52,10 +52,10 @@ th, td {
 }
 
 th {
-    border-color: #00ffcc;
-    opacity: 0.5;
-    color: #00ffcc;
-    font-size: 18px;
+    border-color: #ffffff;
+    color: #c4c3c3;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 td {
@@ -64,18 +64,21 @@ td {
 }
 
 .proficient {
-    color: #008000;
+    color: #00ffcc;
     font-weight: bold;
+    opacity: 100%;
 }
 
 .intermediate {
-    color: #e68a00;
+    color: #00ffcc;
     font-weight: bold;
+    opacity: 80%;
 }
 
 .basics {
-    color: #cc0000;
+    color: #00ffcc;
     font-weight: bold;
+    opacity: 60%;
 }
 
 /*
