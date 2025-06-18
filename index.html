@@ -74,11 +74,15 @@
     <div class="main" id="aboutme">
       <div class="d3">
         <h1>About me</h1>
+        <hr>
         <p>
-            I am a graduate of Information and Network Technologies from the secondary vocational school in Handová. I am dedicated to programming, Linux and also network and server administration.<br>
+            I am a 19 year old fresh graduate of Information and Network Technologies from the secondary vocational school in Handová. I am dedicated to programming, Linux and also network and server administration.<br>
             In near future, I would like to continue my education at university in the same field. In addition to my studies, I volunteer at the Free Time Center in Prievidza, helping with the organization and preparation of events. In my free time, I enjoy photography and play bass guitar in a band.
-        </p><br>
+        </p>
+        <a href="zivotopis-dmolda.pdf" target="_blank"><button class="gh-button">Link to my CV</button></a>
+        <br>
         <h1>Expertiese</h1>
+        <hr>
         <p>
             <table>
                 <tr>
@@ -119,34 +123,80 @@
     </div>
   <div class="main" id="it_stuff">
     <div class="d3">
+        <hr>
+        <h1>Homelab with</h1>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewsletter.proxmox.com%2Fuploads%2FProxmox-logo-white-orange-800_1.png&f=1&nofb=1&ipt=bc5f8482b56941cd3f5d90875fd3ed955ef677d16ddc2ff762973762dc8b9144">
+        <hr><br>
+        <h2>About device I have used</h2>
+        <p>
+            I installed Proxmox VE 8.4 on my unused desktop PC. It’s an HP M01-F1003nc equipped with an Intel Core i5-10400F (Comet Lake, 4.3 GHz), NVIDIA GeForce GTX 1650 Super (4 GB), 8 GB DDR4 RAM, and a 512 GB SSD. The installation process was challenging due to HP’s limited Linux compatibility. I had to modify the boot parameters to get the installer running and manually install the bootloader in rescue mode to complete the setup.
+        </p>
+        <h2>Cybersecurity home lab</h2>
+        <p>
+            I have set up a Kali Linux virtual machine on a Proxmox VE host, alongside VMs running Windows and Linux Mint. Over the next few weeks, I intend to configure various vulnerabilities and insecure settings within these guest systems to create a controlled lab environment for practicing exploitation techniques and testing offensive security tools.
+        </p>
+    </div>
+    <div class="d3">
+        <hr>
         <h1>My linux and hardware journey</h1>
+        <hr><br>
         <a href="images/thinkpad_deb_big.jpg" target="_blank">
             <img src="images/thinkpad_deb.jpg" style="float: left; margin: 20px; width: 40%; height: 40%;" alt="Tosiha Notebook">
         </a>
         <p>
-            I’ve been working on my laptops since 2022. Now I daily drive Debian on Lenovo ThinkPad T480s that I bought this year. Before Debian I used Arch with KDE plasma and then Hyperland. Since I started exploring Linux distributions and upgrading my laptops, I’ve swapped the battery and installed the Mint distribution on Toshiba. I plan to upgrade the RAM on both laptops and replace the fan on Toshiba because it’s bit worn out. I love working on all my laptops because it allows me to learn more about hardware and different Linux distributions. I also want to get more experience at network virtualization with Proxmox on my desktop computer that I don’t use that often so I can run multiple OS and create a small homelab.
+            I’ve been working on my laptops since 2022. Now I daily drive Debian on Lenovo ThinkPad T480s that I bought this year. Before Debian I used Arch with KDE plasma and then Hyperland. Since I started exploring Linux distributions and upgrading my laptops, I’ve swapped the battery and installed the Mint distribution on Toshiba. I plan to upgrade the RAM on both laptops and replace the fan on Toshiba because it’s bit worn out. I love working on all my laptops because it allows me to learn more about hardware and different Linux distributions.
         </p>
+        <div><br>
+        
         <h2>My Laptops and Linux Distributions I've Worked With</h2>
-
-        <p class="laptop">Lenovo ThinkPad T480s (Main)</p>
-        <p>Arch (KDE, Hyprland)<br>Debian (GNOME, Cinnamon)</p>
-
-        <p class="laptop">Toshiba Portege Z830</p>
-        <p>Linux Mint (Cinnamon, Xfce)<br>Fedora Workstation (GNOME)</p>
-
-        <p class="laptop">Asus X51R</p>
-        <p>Fedora Workstation (GNOME)</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Laptop Model</th>
+                    <th>Linux Distributions & Desktop Environments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Lenovo ThinkPad T480s
+                    </td>
+                    <td>
+                        <div>Arch (KDE, Hyprland)</div>
+                        <div>Debian (GNOME)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Toshiba Portege Z830</td>
+                    <td>
+                        <div>Linux Mint (Cinnamon, Xfce)</div>
+                        <div>Fedora Workstation (GNOME)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Asus X51R</td>
+                    <td>
+                        <div>Fedora Workstation (GNOME)</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
     <div class="d3">
+        <hr>
+        <h1>Exploration of</h1>
         <img src="https://tails.net/lib/logo.svg" alt="Tails OS logo">
-        <h1>Exploration</h1><br>
+        <hr><br>
         <p>Tails (The Amnesic Incognito Live System) is a security-focused, Debian-based Linux distribution designed to protect privacy and anonymity. I discovered it while researching privacy-centric Linux systems. Tails runs entirely from a USB stick or DVD, using the computer’s RAM and leaving no trace on the host system by default, making it ideal for anonymous browsing and secure work.</p>
         <p> One of Tails’ core features is the integration of the Tor network. The operating system includes the Tor Browser, which anonymizes internet traffic by routing it through a volunteer overlay network of at least three different relays. This makes it significantly harder to trace your IP address or physical location.</p>
         <p>Tails also features “amnesia,” which means it doesn’t retain any data between sessions unless you explicitly choose to. However, it supports an optional encrypted persistent storage. This allows you to save specific files, system settings, additional software, and personal data securely on the USB drive, accessible only with a passphrase during startup.</p>
         <p>In my personal setup, I’ve enabled persistent storage to install and explore various penetration testing, social engineering, and cybersecurity tools. Tails provides a safe, isolated environment for learning about digital privacy, anonymity, and ethical hacking practices without compromising the host machine.</p>
     </div>
     <div class="d3">
-        <h2>Linux web server</h2>
+        <hr>
+        <h1>Linux web server</h1>
+        <hr><br>
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.zimaboard.com%2Fimg%2Fproduct_1.png&f=1&nofb=1&ipt=d31e6766d7fa2e5db31faf4afead993eb6da358e1cd4acf71cde33d59cdc3d2b" style="float: right; margin: 20px; width: 40%; height: 40%;" alt="ZimaBoard">
         <p>The project was part of my maturita exam. It focused on the installation and configuration of a Linux server for hosting a website. A ZimaBoard, a compact computer, was used to enable efficient deployment of website. The project included setup of Apache2, remote access via SSH, securing the server using the UFW firewall, and the use of PHPMailer for sending encrypted emails.</p>
         <p>The goal of the project was to set up a web server on Linux machine and create a simple website with PHP as backend. This project focused on a physical server, which allowed for a deeper understanding of hardware, server administration and network management. Compared to regular web hosting, this project provided greater control over configuration and security.</p>
@@ -307,7 +357,7 @@
     <p style="text-align: center;">
         © Daniel Molda 2024-2025<br>
         email: <a href="mailto:danielmolda1@gmail.com" target="_blank">danielmolda1@gmail.com</a><br>
-        Download my CV <a href="zivotopis-dmolda.pdf" target="_blank">here</a>
+        Wiew my CV <a href="zivotopis-dmolda.pdf" target="_blank">here</a>
     </p>
 </footer>
 </body>
