@@ -648,20 +648,6 @@ input {
         font-size: 1.5rem;
         padding: 8px 15px;
     }
-
-    .d3 .img_left{
-        float: left;
-        margin: 15px;
-        width: 45%;
-        height: 45%;
-    }
-
-    .d3 .img_right{
-        float: right;
-        margin: 15px;
-        width: 45%;
-        height: 45%;
-    }
     
     .gallery-item {
         flex: 1 1 calc(50% - 20px);
