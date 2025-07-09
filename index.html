@@ -76,7 +76,7 @@
         <h1>About me</h1>
         <hr>
         <p>
-            I am a 19 year old fresh graduate of Information and Network Technologies from the secondary vocational school in Handová. I am dedicated to programming, Linux and also network and server administration.<br>
+            I am a 19 year old fresh graduate of Information and Network Technologies from the <a href="https://www.sosha.sk/">secondary vocational school in Handová</a>. I am dedicated to programming, Linux and also network and server administration.<br>
             In near future, I would like to continue my education at university in the same field. In addition to my studies, I volunteer at the Free Time Center in Prievidza, helping with the organization and preparation of events. In my free time, I enjoy photography and play bass guitar in a band.
         </p>
         <a href="zivotopis-dmolda.pdf" target="_blank"><button class="gh-button">Link to my CV</button></a>
@@ -125,19 +125,21 @@
     <div class="d3">
         <hr>
         <h1>Homelab with</h1>
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewsletter.proxmox.com%2Fuploads%2FProxmox-logo-white-orange-800_1.png&f=1&nofb=1&ipt=bc5f8482b56941cd3f5d90875fd3ed955ef677d16ddc2ff762973762dc8b9144" style="width: 90%; height: 90%;">
+        <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewsletter.proxmox.com%2Fuploads%2FProxmox-logo-white-orange-800_1.png&f=1&nofb=1&ipt=bc5f8482b56941cd3f5d90875fd3ed955ef677d16ddc2ff762973762dc8b9144" style="width: 90%; height: 90%;">
+        </a>
         <hr><br>
         <h2>About device I have used</h2>
         <p>
-            I installed Proxmox VE 8.4 on my unused desktop PC. It’s an HP M01-F1003nc equipped with an Intel Core i5-10400F (Comet Lake, 4.3 GHz), NVIDIA GeForce GTX 1650 Super (4 GB), 8 GB DDR4 RAM, and a 512 GB SSD. The installation process was challenging due to HP’s limited Linux compatibility. I had to modify the boot parameters to get the installer running and manually install the bootloader in rescue mode to complete the setup.
+            I installed <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview">Proxmox VE 8.4</a> on my unused desktop PC. It’s an HP M01-F1003nc equipped with an Intel Core i5-10400F (Comet Lake, 4.3 GHz), NVIDIA GeForce GTX 1650 Super (4 GB), 8 GB DDR4 RAM, and a 512 GB SSD. The installation process was challenging due to HP’s limited Linux compatibility. I had to modify the boot parameters to get the installer running and manually install the bootloader in rescue mode to complete the setup.
         </p>
         <h2>Cybersecurity homelab</h2>
         <p>
-            I have set up a Parrot security Linux virtual machine on a Proxmox VE hypervisor, that comes preinstalled with plenty of penetration testing tools, alongside VMs running Windows 10, Linux Mint hosting Apache2 website and Fedora Server, which I currently don’t have a specific use case for. Over the next few weeks, I intend to configure various vulnerabilities and insecure settings within these guest systems to create a controlled lab environment for practicing exploitation techniques and testing offensive security tools. I have alredy done autorun script for reverse shell using netcat Linux to Linux but I want to do something more complex next time.
+            I have set up a <a href="https://www.parrotsec.org/">Parrot security</a> Linux virtual machine on a Proxmox VE hypervisor, that comes preinstalled with plenty of penetration testing tools, alongside VMs running Windows 10, <a href="https://www.linuxmint.com/">Linux Mint</a> hosting <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache2</a> website and <a href="https://fedoraproject.org/">Fedora Server</a>, which I currently don’t have a specific use case for. Over the next few weeks, I intend to configure various vulnerabilities and insecure settings within these guest systems to create a controlled lab environment for practicing exploitation techniques and testing offensive security tools. I have alredy done autorun script for reverse shell using netcat Linux to Linux but I want to do something more complex next time.
         </p>
-        <h2>FreeBSD</h2>
+        <h2>BSD</h2>
         <p>
-            I wanted to get more experience with BSD and other real UNIX-based operating systems, not just UNIX-like ones such as distributions of Linux. I'm curious about how BSD works differently, especially in areas like system structure, networking, and security. Later, I plan to try using FreeBSD for running lightweight servers, testing network services, and learning more about how things work behind the scenes compared to Linux.
+            I wanted to get more experience with <a href="https://en.wikipedia.org/wiki/List_of_BSD_operating_systems">BSD</a> and other real UNIX-based operating systems, not just <a href="https://en.wikipedia.org/wiki/Unix-like">UNIX-like</a> ones such as distributions of Linux. I'm curious about how BSD works differently, especially in areas like system structure, networking, and security. Later, I plan to try using FreeBSD for running lightweight servers, testing network services, and learning more about how things work behind the scenes compared to Linux.
         </p>
     </div>
     <div class="d3">
@@ -187,7 +189,7 @@
     <div class="d3">
         <hr>
         <h1>Self-hosted DNS server</h1>
-        <hr>br
+        <hr><br>
         <img src="https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/doc/adguard_home_darkmode.svg" class="img_right" alt="AdGuard logo">
         <p>
            I self-hosted AdGuard Home to block ads and protect my devices from threats. It filters malicious domains, improves privacy, and keeps my whole network safer—without depending on third-party DNS services.
@@ -201,21 +203,44 @@
     </div>
     <div class="d3">
         <hr>
+        <br>
+        <a href="https://www.twingate.com/">
+            <img src="https://storage.googleapis.com/afs-prod/media/5ab8d13687ffa4f650a97a7ffc4ffb7c/1713.jpeg" style="width: 90%; height: 90%; filter: invert(100%); background-color: white;" alt="Twingate logo">
+        </a>
+        <h1>TLS tunnel to local network</h1>
+        <hr><br>
+        <img src="images/twingate.png" class="img_left" alt="twingate_homepage">
+        <p>
+            <a href="https://www.twingate.com/">Twingate</a> is a modern, secure remote access solution that replaces traditional VPNs. It allows users to safely connect to private resources (like internal servers, apps, or databases) without exposing the entire network. Twingate uses a zero-trust approach, meaning each user or device only gets access to exactly what they need—nothing more.
+        </p>
+        <img src="images/twingate_groups.png" class="img_right  alt="twingate groups">
+        <p>
+            To enable secure remote access with Twingate, I set up a dedicated virtual machine on my Proxmox server. This VM runs a Docker container with Twingate’s Connector, which serves as a secure gateway between Twingate and my private network.
+        </p>
+        <img src="images/twingate_network.png" class="img_left" alt="twingate devices">
+        <p>
+            After creating the VM, I installed Docker and deployed the Twingate Connector using the configuration provided in the Twingate admin panel. The setup was simple and efficient: I registered the Connector to my Twingate network, copied the auto-generated Docker run command, and launched the container. Once running, the Connector established a secure, encrypted connection to Twingate’s cloud. This allows authorized users to securely access my TrueNAS server on ports 137-139 and 445(SMB ports), while I, as the administrator, can manage internal services like the AdGuard Home, TrueNAS and Proxmox web interfaces—without exposing any part of the local network to the public internet.
+        </p>
+    </div>
+    <div class="d3">
+        <hr>
         <h1>Atari 130XE and BASIC programming language</h1>
         <hr><br>
         <img src="images/atari.png" class="img_right" alt="atari 130XE png">
-        <p>I recently got an old Atari 130XE from my dad’s uncle, along with some game tapes, a tape recorder, and two joysticks. The tape recorder probably needs the playback head cleaned, as I keep getting errors (138 and 143) when trying to load data. It might also be that the magnetic tapes have weakened over time.</p>
+        <p>I recently got an old <a href="https://en.wikipedia.org/wiki/Atari_8-bit_computers#XE_series">Atari 130XE</a> from my dad’s uncle, along with some game tapes, a tape recorder, and two joysticks. The tape recorder probably needs the playback head cleaned, as I keep getting errors (138 and 143) when trying to load data. It might also be that the magnetic tapes have weakened over time.</p>
         <a href="images/atari_code_big.gif">
             <img src="images/atari_code.gif" class="img_left" alt="me infront of atari">
         </a>
-        <p>Still, I was excited to try programming on it. In just half an hour, I wrote my own BASIC program that displays my name inside a flashing box. I really enjoy working with retro 8-bit computers — it’s a fun and nostalgic experience!</p>
+        <p>Still, I was excited to try programming on it. In just half an hour, I wrote my own <a href="https://en.wikipedia.org/wiki/BASIC">BASIC</a> program that displays my name inside a flashing box. I really enjoy working with retro 8-bit computers — it’s a fun and nostalgic experience!</p>
     </div>
     <div class="d3">
         <hr>
         <h1>Exploration of</h1>
-        <img src="https://tails.net/lib/logo.svg" alt="Tails OS logo">
+        <a href="https://tails.net/">
+            <img src="https://tails.net/lib/logo.svg" alt="Tails OS logo">
+        </a>
         <hr><br>
-        <p>Tails (The Amnesic Incognito Live System) is a security-focused, Debian-based Linux distribution designed to protect privacy and anonymity. I discovered it while researching privacy-centric Linux systems. Tails runs entirely from a USB stick or DVD, using the computer’s RAM and leaving no trace on the host system by default, making it ideal for anonymous browsing and secure work.</p>
+        <p><a href="https://tails.net/">Tails</a> (The Amnesic Incognito Live System) is a security-focused, <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based">Debian-based</a> Linux distribution designed to protect privacy and anonymity. I discovered it while researching privacy-centric Linux systems. Tails runs entirely from a USB stick or DVD, using the computer’s RAM and leaving no trace on the host system by default, making it ideal for anonymous browsing and secure work.</p>
         <p> One of Tails’ core features is the integration of the Tor network. The operating system includes the Tor Browser, which anonymizes internet traffic by routing it through a volunteer overlay network of at least three different relays. This makes it significantly harder to trace your IP address or physical location.</p>
         <p>Tails also features “amnesia,” which means it doesn’t retain any data between sessions unless you explicitly choose to. However, it supports an optional encrypted persistent storage. This allows you to save specific files, system settings, additional software, and personal data securely on the USB drive, accessible only with a passphrase during startup.</p>
         <p>In my personal setup, I’ve enabled persistent storage to install and explore various penetration testing, social engineering, and cybersecurity tools. Tails provides a safe, isolated environment for learning about digital privacy, anonymity, and ethical hacking practices without compromising the host machine.</p>
@@ -225,7 +250,7 @@
         <h1>Linux web server</h1>
         <hr><br>
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.zimaboard.com%2Fimg%2Fproduct_1.png&f=1&nofb=1&ipt=d31e6766d7fa2e5db31faf4afead993eb6da358e1cd4acf71cde33d59cdc3d2b" style="float: right; margin: 15px; width: 40%; height: 40%;" alt="ZimaBoard">
-        <p>The project was part of my maturita exam. It focused on the installation and configuration of a Linux server for hosting a website. A ZimaBoard, a compact computer, was used to enable efficient deployment of website. The project included setup of Apache2, remote access via SSH, securing the server using the UFW firewall, and the use of PHPMailer for sending encrypted emails.</p>
+        <p>The project was part of my maturita exam. It focused on the installation and configuration of a Linux server for hosting a website. A <a href="https://www.zimaboard.com/application/home_server">ZimaBoard</a>, a compact computer, was used to enable efficient deployment of website. The project included setup of Apache2, remote access via <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a>, securing the server using the UFW firewall, and the use of PHPMailer for sending encrypted emails.</p>
         <p>The goal of the project was to set up a web server on Linux machine and create a simple website with PHP as backend. This project focused on a physical server, which allowed for a deeper understanding of hardware, server administration and network management. Compared to regular web hosting, this project provided greater control over configuration and security.</p>
         <a href="https://github.com/DandyTheWood/CV-Website" target="_blank"><button class="gh-button">Link to project on GitHub</button></a>
     </div>
@@ -383,7 +408,7 @@
 <footer>
     <p style="text-align: center;">
         Created by Daniel Molda 2024<br>
-        Last updated on <span id="git-last-commit-date">06.07.2025</span><br>
+        Last updated on <span id="git-last-commit-date">09.07.2025</span><br>
         email: <a href="mailto:danielmolda1@gmail.com">danielmolda1@gmail.com</a><br>
         View my CV <a href="zivotopis-dmolda.pdf" target="_blank">here</a>
     </p>
