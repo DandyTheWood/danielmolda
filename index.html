@@ -17,15 +17,38 @@
 <body>
     <nav>
         <div class="menu-container">
-            <a href="index.html" class="dmolda_button">
+            <a href="#index" class="dmolda_button">
                 <span class="actual-text">&nbsp;Daniel&nbsp;Molda&nbsp;</span>
             </a>
             <div class="dropdown">
                 <button class="dropdown-button">Menu</button>
                 <div class="dropdown-content">
                     <a href="#aboutme">About Me</a>
-                    <a href="#it_stuff">IT Projects</a>
-                    <a href="#photography">Photography</a>
+                    <div class="nested-dropdown">
+                        <a href="#it_stuff">IT Projects</a>
+                        <div class="nested-dropdown-content">
+                            <a href="#proxmox">Proxmox homelab</a>
+                            <a href="#linux">Linux and Hardware</a>
+                            <a href="#adguard_dns">AdGuard DNS</a>
+                            <a href="#twingate">Twingate</a>
+                            <a href="#atari">Atari 130XE</a>
+                            <a href="#tails">TailsOS</a>
+                            <a href="#web_server">Linux web server</a>
+                        </div>
+                    </div>
+                    <div class="nested-dropdown">
+                        <a href="#photography">Photography</a>
+                        <div class="nested-dropdown-content">
+                            <a href="#girl">Girl in rain</a>
+                            <a href="#autumn_portraits">Autumn portraits</a>
+                            <a href="#croatia">Croatia</a>
+                            <a href="#scotland">Scotland</a>
+                            <a href="#trnava">Trnava</a>
+                            <a href="#products">Product Photography</a>
+                            <a href="#other">Other</a>
+                        </div>
+                    </div>
+                    
                     <a href="zivotopis-dmolda.pdf" target="_blank">My CV</a>
                 </div>
             </div>
@@ -77,7 +100,7 @@
         <hr>
         <p>
             I am a 19 year old fresh graduate of Information and Network Technologies from the <a href="https://www.sosha.sk/">secondary vocational school in Handová</a>. I am dedicated to programming, Linux and also network and server administration.<br>
-            In near future, I would like to continue my education at university in the same field. In addition to my studies, I volunteer at the Free Time Center in Prievidza, helping with the organization and preparation of events. In my free time, I enjoy photography and play bass guitar in a band.
+            This year, I’m starting my studies at the University of Žilina (<a href="https://www.uniza.sk/">Žilinská univerzita v Žiline</a>), at the Faculty of Management and Informatics (<a href="https://www.fri.uniza.sk/">Fakulta riadenia a informatiky</a>), where I’ll be studying Informatics. In addition to my studies, I volunteer at the Free Time Center in Prievidza, helping with the organization and preparation of events. In my free time, I enjoy photography and play bass guitar in a band.
         </p>
         <a href="zivotopis-dmolda.pdf" target="_blank"><button class="gh-button">Link to my CV</button></a>
         <br>
@@ -122,7 +145,7 @@
       </div>
     </div>
   <div class="main" id="it_stuff">
-    <div class="d3">
+    <div class="d3" id="proxmox">
         <hr>
         <h1>Homelab with</h1>
         <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview">
@@ -142,7 +165,7 @@
             I wanted to get more experience with <a href="https://en.wikipedia.org/wiki/List_of_BSD_operating_systems">BSD</a> and other real UNIX-based operating systems, not just <a href="https://en.wikipedia.org/wiki/Unix-like">UNIX-like</a> ones such as distributions of Linux. I'm curious about how BSD works differently, especially in areas like system structure, networking, and security. Later, I plan to try using FreeBSD for running lightweight servers, testing network services, and learning more about how things work behind the scenes compared to Linux.
         </p>
     </div>
-    <div class="d3">
+    <div class="d3" id="linux">
         <hr>
         <h1>My linux and hardware journey</h1>
         <hr><br>
@@ -186,7 +209,7 @@
             </tbody>
         </table>
     </div>
-    <div class="d3">
+    <div class="d3" id="adguard_dns">
         <hr>
         <h1>Self-hosted DNS server</h1>
         <hr><br>
@@ -201,7 +224,7 @@
             I chose <a href="https://adguard.com/en/adguard-home/overview.html" target="_blank">AdGuard Home</a> because it offers a clean and intuitive web interface, which makes it easy to manage and configure. Its simplicity was an important factor, as I wanted a reliable DNS solution without unnecessary complexity. I set up custom upstream DNS servers to ensure fast and secure domain resolution. In addition, I enabled several DNS blocklists to actively block ads, phishing attempts, tracking services, and other malicious websites. This helps protect all devices on my network while improving browsing speed and privacy.
         </p>
     </div>
-    <div class="d3">
+    <div class="d3" id="twingate">
         <hr>
         <br>
         <a href="https://www.twingate.com/">
@@ -222,7 +245,7 @@
             After creating the VM, I installed Docker and deployed the Twingate Connector using the configuration provided in the Twingate admin panel. The setup was simple and efficient: I registered the Connector to my Twingate network, copied the auto-generated Docker run command, and launched the container. Once running, the Connector established a secure, encrypted connection to Twingate’s cloud. This allows authorized users to securely access my TrueNAS server on ports 137-139 and 445(SMB ports), while I, as the administrator, can manage internal services like the AdGuard Home, TrueNAS and Proxmox web interfaces—without exposing any part of the local network to the public internet.
         </p>
     </div>
-    <div class="d3">
+    <div class="d3" id="atari">
         <hr>
         <h1>Atari 130XE and BASIC programming language</h1>
         <hr><br>
@@ -233,7 +256,7 @@
         </a>
         <p>Still, I was excited to try programming on it. In just half an hour, I wrote my own <a href="https://en.wikipedia.org/wiki/BASIC">BASIC</a> program that displays my name inside a flashing box. I really enjoy working with retro 8-bit computers — it’s a fun and nostalgic experience!</p>
     </div>
-    <div class="d3">
+    <div class="d3" id="tails">
         <hr>
         <h1>Exploration of</h1>
         <a href="https://tails.net/">
@@ -245,7 +268,7 @@
         <p>Tails also features “amnesia,” which means it doesn’t retain any data between sessions unless you explicitly choose to. However, it supports an optional encrypted persistent storage. This allows you to save specific files, system settings, additional software, and personal data securely on the USB drive, accessible only with a passphrase during startup.</p>
         <p>In my personal setup, I’ve enabled persistent storage to install and explore various penetration testing, social engineering, and cybersecurity tools. Tails provides a safe, isolated environment for learning about digital privacy, anonymity, and ethical hacking practices without compromising the host machine.</p>
     </div>
-    <div class="d3">
+    <div class="d3" id="web_server">
         <hr>
         <h1>Linux web server</h1>
         <hr><br>
@@ -258,7 +281,7 @@
 <div class="main" id="photography">
   <section class="gallery">
       <div class="gallery">
-          <div class="gallery-item">
+          <div class="gallery-item" id="girl">
               <h2>Girl in rain</h2><br>
               <div class="center-image">
                   <a href="images/Galery/big/girl_rainy_day_4.jpg" target="_blank">
@@ -276,7 +299,7 @@
               </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item" id="autumn_portraits">
               <h2>Autumn portraits</h2><br>
               <div class="center-image">
                   <a href="images/Galery/big/autumn_portrait_1.jpg" target="_blank">
@@ -291,7 +314,7 @@
               </div>
           </div>
       
-          <div class="gallery-item">
+          <div class="gallery-item" id="croatia">
               <h2>Croatia</h2><br>
               <div class="center-image">
                   <a href="images/Galery/big/croatia_house.jpg" target="_blank">
@@ -316,7 +339,7 @@
               </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item" id="scotland">
               <h2>Scotland</h2><br>
               <div class="center-image">
                   <a href="images/Galery/big/scotland_oil_tower.jpg" target="_blank">
@@ -334,7 +357,7 @@
               </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item" id="trnava">
               <h2>Trnava</h2><br>
               <div class="center-image">
                   <a href="images/Galery/big/trnava_train_station.jpg" target="_blank">
@@ -355,7 +378,7 @@
               </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item" id="products">
               <h1>Product Photography</h1>
               <div class="center-image">
                   <a href="images/Galery/big/iphone_smoke.jpg" target="_blank">
@@ -367,7 +390,7 @@
               </div>
           </div>
 
-          <div class="gallery-item">
+          <div class="gallery-item" id="other">
               <h2>Other</h2><br>
               <div class="center-image">
                   <a href="images/Galery/big/handlova_railway.jpg" target="_blank">
@@ -408,7 +431,7 @@
 <footer>
     <p style="text-align: center;">
         Created by Daniel Molda 2024<br>
-        Last updated on <span id="git-last-commit-date">09.07.2025</span><br>
+        Last updated on <span id="git-last-commit-date">22.07.2025</span><br>
         email: <a href="mailto:danielmolda1@gmail.com">danielmolda1@gmail.com</a><br>
         View my CV <a href="zivotopis-dmolda.pdf" target="_blank">here</a>
     </p>

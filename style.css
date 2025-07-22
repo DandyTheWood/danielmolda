@@ -379,6 +379,7 @@ input {
     background-color: #00ffcc;
     color: #000;
     transform: scale(1.1);
+    
 }
 
 .dropdown-content {
@@ -414,6 +415,61 @@ input {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/*
+    Nested dropdown styles
+*/
+
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    border-radius: 1px;
+    border-right: 1px solid #00ffcc;
+}
+
+.nested-dropdown:hover .nested-dropdown-content {
+    display: block;
+}
+
+.nested-dropdown > a::after {
+    content: " ◀";
+    float: right;
+    color: #00ffcc;
+    font-size: 0.8em;
+}
+
+.nested-dropdown-content a {
+    color: #00ffcc;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #00ffcc;
+    font-size: 0.9em;
+}
+
+.nested-dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.nested-dropdown-content a:hover {
+    background-color: #00ffcc;
+    color: #000;
+}
+
+/*
+    Link
+*/
 
 .gh-button {
   font-size: 1.5rem;
@@ -495,137 +551,9 @@ input {
     transform: scale(1.05);
 }
 
-/*
-    Dizajn Feedback z uiverse.io
-*/
-
-.form-container {
-    width: 400px;
-    background: linear-gradient(rgb(55, 55, 55),rgb(55, 55, 55)) padding-box,
-                linear-gradient(145deg, transparent 35%, #00ffcc, #40c9ff) border-box;
-    border: 2px solid transparent;
-    padding: 16px;
-    font-size: 14px;
-    font-family: inherit;
-    color: white;
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
-    gap: 2px;
-    box-sizing: border-box;
-    border-radius: 16px;
-    background-size: 200% 100%;
-    animation: gradient 5s ease infinite;
-    animation: fly-in 1.3s ease-out;
-}
-  
-@keyframes gradient {
-    0% {
-    background-position: 0% 50%;
-    }
-
-    50% {
-    background-position: 100% 50%;
-    }
-
-    100% {
-    background-position: 0% 50%;
-    }
-}
-
-.form-container button:active {
-    scale: 0.95;
-}
-
-.form-container .form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.form-container .form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.form-container .form-group input,
-.form-container .form-group textarea {
-    width: 100%;
-    text-align: left;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: 1px solid #414141;
-    background-color: transparent;
-    color: #fff;
-    font-family: inherit;
-    resize: none;
-    display: block;
-}
-
-.form-container .form-group input {
-    height: 48px;
-}
-
-.form-container .form-submit-btn {
-    align-self: flex-start;
-}
-
-
-.form-container .form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 8px;
-    resize: none;
-    color: #fff;
-    height: 96px;
-    border: 1px solid #414141;
-    background-color: transparent;
-    font-family: inherit;
-}
-
-.form-container .form-group input::placeholder {
-    opacity: 0.5;
-}
-
-.form-container .form-group input:focus {
-    outline: none;
-    border-color: #00ffcc;
-}
-
-.form-container .form-group textarea:focus {
-    outline: none;
-    border-color: #00ffcc;
-}
-
-.form-container .form-submit-btn {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    align-self: flex-start;
-    font-family: inherit;
-    color: #717171;
-    font-weight: 600;
-    width: 40%;
-    background: #313131;
-    border: 1px solid #414141;
-    padding: 12px 16px;
-    font-size: inherit;
-    gap: 8px;
-    margin-top: 8px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.form-container .form-submit-btn:hover {
-    background-color: #fff;
-    border-color: #fff;
-}
 
 /*
-    Nastavenie stĺpcov galérie
+    Responzívny dizajn 
 */
 @media (max-width: 1024px) {
     .gallery-item {
@@ -652,6 +580,18 @@ input {
     .gallery-item {
         flex: 1 1 calc(50% - 20px);
     }
+
+    .nested-dropdown-content {
+        position: static;
+        left: 0;
+        top: 0;
+        margin-left: 15px;
+        border-left: 2px solid #00ffcc;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        min-width: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -676,6 +616,15 @@ input {
     .dropdown-button {
         font-size: 1rem;
         padding: 8px 12px;
+    }
+
+    .nested-dropdown-content a {
+        padding: 6px 10px;
+        font-size: 0.85em;
+    }
+
+    .nested-dropdown > a::after {
+        font-size: 0.7em;
     }
 
     .dmolda_button {
@@ -721,7 +670,3 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 10;
 }
-
-/*
-    Responzívny dizajn 
-*/
