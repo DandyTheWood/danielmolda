@@ -585,11 +585,11 @@ input {
         position: static;
         left: 0;
         top: 0;
-        margin-left: 15px;
-        border-left: 2px solid #00ffcc;
+        margin-right: 11px;
+        border-bottom: 1px solid #00ffcc;
         border-radius: 0;
         box-shadow: none;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0);
         min-width: auto;
     }
 }
