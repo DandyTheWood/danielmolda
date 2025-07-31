@@ -9,6 +9,20 @@
     font-family: 'Poppins', sans-serif;
 }
 
+a {
+    color: #00ffcc;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #18bb9a;
+}
+
+a:visited {
+    color: #32ad95;
+}
+
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pond5.com/computer-coding-background-footage-090890180_prevstill.jpeg');
     background-size: cover;
