@@ -9,20 +9,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-a {
-    color: #00ffcc;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: #18bb9a;
-}
-
-a:visited {
-    color: #32ad95;
-}
-
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pond5.com/computer-coding-background-footage-090890180_prevstill.jpeg');
     background-size: cover;
@@ -193,6 +179,21 @@ html {
     line-height: 1.8;
     animation: smooth_appear 3s ease-out;
 }
+
+.d3 a {
+    color: #00ffcc;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.d3 a:hover {
+    color: #18bb9a;
+}
+
+.d3 a:visited {
+    color: #32ad95;
+}
+
 
 .toshiba_image {
     max-width: 100%;
