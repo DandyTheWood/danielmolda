@@ -90,9 +90,13 @@
             </ul>
         </div>
         <div class="d2">
-            <a href="images/my_photo_big.jpg" target="_blank">
-                <img id="image_animation" src="images/my_photo.jpg" alt="my photo">
-            </a>
+            <div class="photo-card" id="photo_card" role="button" tabindex="0" aria-pressed="false" title="Click to flip">
+                <div class="photo-card-inner">
+                    <div class="photo-card-front">
+                        <img id="photo_front" src="images/my_photo/my_photo_serious.jpg" alt="serious photo">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="main" id="aboutme">
@@ -254,7 +258,7 @@
         <hr><br>
         <img src="images/twingate.png" class="img_left" alt="twingate_homepage">
         <p><a href="https://www.twingate.com/" target="_blank">Twingate</a> is a modern, secure remote access solution that replaces traditional <a href="https://en.wikipedia.org/wiki/Virtual_private_network" target="_blank">VPNs</a>. It allows users to safely connect to private resources (like internal servers, apps, or databases) without exposing the entire network. Twingate uses a <a href="https://en.wikipedia.org/wiki/Zero_trust_security_model" target="_blank">zero-trust</a> approach, meaning each user or device only gets access to exactly what they need—nothing more.</p>
-        <img src="images/twingate_groups.png" class="img_right  alt="twingate groups">
+        <img src="images/twingate_groups.png" class="img_right" alt="twingate groups">
         <p>To enable secure remote access with Twingate, I set up a dedicated virtual machine on my <a href="https://www.proxmox.com/en/proxmox-virtual-environment/overview" target="_blank">Proxmox</a> server. This VM runs a <a href="https://www.docker.com/" target="_blank">Docker</a> container with Twingate’s Connector, which serves as a secure gateway between Twingate and my private network.</p>
         <img src="images/twingate_network.png" class="img_left" alt="twingate devices">
         <p>After creating the VM, I installed Docker and deployed the Twingate Connector using the configuration provided in the Twingate admin panel. The setup was simple and efficient: I registered the Connector to my Twingate network, copied the auto-generated Docker run command, and launched the container. Once running, the Connector established a secure, encrypted connection to Twingate’s cloud. This allows authorized users to securely access my <a href="https://www.truenas.com/" target="_blank">TrueNAS</a> server on ports 137-139 and <a href="https://en.wikipedia.org/wiki/Server_Message_Block" target="_blank">445</a> (SMB), while I, as the administrator, can manage internal services like the <a href="https://adguard.com/en/adguard-home/overview.html" target="_blank">AdGuard Home</a>, TrueNAS, and Proxmox web interfaces—without exposing any part of the local network to the public internet.</p>
@@ -292,7 +296,7 @@
         <a href="https://github.com/DandyTheWood/CV-Website" target="_blank"><button class="gh-button">Link to project on GitHub</button></a>
     </div>
 </div>
-<div class="main" id="photography">
+
   <section class="gallery">
       <div class="gallery">
           <div class="gallery-item" id="girl">
@@ -445,7 +449,7 @@
 <footer>
     <p style="text-align: center;">
         Created by Daniel Molda 2024<br>
-        Last updated on <span id="current-date">09.11.2025</span><br>
+        Last updated on <span id="current-date">27.11.2025</span><br>
         email: <a href="mailto:danielmolda1@gmail.com">danielmolda1@gmail.com</a><br>
         View my CV <a href="zivotopis-dmolda.pdf" target="_blank">here</a>
     </p>
