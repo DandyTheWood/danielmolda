@@ -34,7 +34,7 @@ nav {
 .dmolda_button:hover {
     background-color: var(--accent-cyan);
     color: var(--button-text-on-accent);
-    transform: scale(1.1);
+    transform: scale(0.95);
 }
 
 .dropdown {

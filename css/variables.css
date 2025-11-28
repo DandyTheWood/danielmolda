@@ -12,7 +12,7 @@
 
     /* Accent / interactive */
     --accent-cyan: #ffffff;
-    --accent-cyan-opaque: rgba(0,255,204,0.6);
+    --accent-cyan-opaque: rgba(255, 255, 255, 0.6);
     --link: #0338e7;
     --link-hover: #bb1818;
     --link-visited: #910404;
