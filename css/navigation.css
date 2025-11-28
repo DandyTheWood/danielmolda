@@ -32,7 +32,7 @@ nav {
 }
 
 .dmolda_button:hover {
-    background-color: var(--accent-cyan);
+    background-color: var(--accent-cyan-opaque);
     color: var(--button-text-on-accent);
     transform: scale(0.95);
 }
@@ -55,7 +55,7 @@ nav {
 }
 
 .dropdown-button:hover {
-    background-color: var(--accent-cyan);
+    background-color: var(--accent-cyan-opaque);
     color: var(--button-text-on-accent);
     transform: scale(1.1);
 }
@@ -86,7 +86,7 @@ nav {
 }
 
 .dropdown-content a:hover {
-    background-color: var(--accent-cyan);
+    background-color: var(--accent-cyan-opaque);
     color: var(--button-text-on-accent);
 }
 
@@ -103,6 +103,7 @@ nav {
     position: absolute;
     right: 100%;
     top: 0;
+    margin-top: 1px;
     background-color: rgba(0, 0, 0, 0.9);
     min-width: 150px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
@@ -137,7 +138,7 @@ nav {
 }
 
 .nested-dropdown-content a:hover {
-    background-color: var(--accent-cyan);
+    background-color: var(--accent-cyan-opaque);
     color: var(--button-text-on-accent);
 }
 

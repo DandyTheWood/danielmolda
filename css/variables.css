@@ -12,14 +12,14 @@
 
     /* Accent / interactive */
     --accent-cyan: #ffffff;
-    --accent-cyan-opaque: rgba(255, 255, 255, 0.6);
+    --accent-cyan-opaque: rgba(255, 255, 255, 0.781);
     --link: #0338e7;
     --link-hover: #bb1818;
     --link-visited: #910404;
 
     /* Waves / neon */
-    --wave-blue-main: rgba(1, 90, 255, 0.98);
-    --wave-blue-mid: rgba(0, 98, 211, 0.6);
+    --wave-blue-main: rgba(2, 72, 202, 0.98);
+    --wave-blue-mid: rgba(5, 85, 177, 0.6);
     --wave-blue-light: rgba(0,120,255,0.08);
 
     --wave-red-main: rgba(255,60,60,0.98);
@@ -27,8 +27,8 @@
     --wave-red-light: rgba(255,0,0,0.06);
 
     /* Link gradient */
-    --link-grad-left: rgb(3, 150, 248);
-    --link-grad-right: rgb(230, 31, 31);
+    --link-grad-left: rgb(3, 101, 248);
+    --link-grad-right: rgb(179, 2, 2);
     --link-grad-angle: 90deg;
     --link-grad-speed: 11s;
 

@@ -136,6 +136,16 @@
         padding: 8px 12px;
     }
 
+    .lightbox-prev {
+        position: absolute;
+        left: 5%;
+    }
+
+    .lightbox-next {
+        position: absolute;
+        right: 5%;
+    }
+
     .lightbox-title {
         font-size: 1.1rem;
         gap: 1rem;
@@ -174,21 +184,15 @@
     }
 
     .dmolda_button {
-        font-size: 1rem;
+        font-size: 1.45rem;
         padding: 8px 10px;
         width: auto;
         flex: 1;
+        flex-wrap: 0;
         margin-bottom: 0;
         letter-spacing: 0.5px;
         min-width: 120px;
         white-space: nowrap;
-    }
-
-    .dropdown-button {
-        font-size: 0.85rem;
-        padding: 8px 15px;
-        width: auto;
-        flex-shrink: 0;
     }
 
     .dropdown-content {
@@ -220,7 +224,7 @@
         border-right: none;
         border-left: 2px solid var(--accent-cyan);
         margin-left: 15px;
-        margin-top: 0;
+        margin-top: 0px;
         box-shadow: none;
         width: calc(100% - 15px);
     }
