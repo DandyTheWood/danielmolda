@@ -1,0 +1,182 @@
+/* Links */
+.d3 a {
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    background: linear-gradient(var(--link-grad-angle),
+        var(--link-grad-left) 0%,
+        var(--link-grad-right) 50%,
+        var(--link-grad-left) 100%);
+    background-size: 300% 100%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    will-change: background-position, filter;
+    animation: link-gradient-slide var(--link-grad-speed) linear infinite;
+    transition: filter 200ms ease, opacity 200ms ease;
+}
+
+.d3 a:hover,
+.d3 a:focus {
+    filter: brightness(1.1);
+    outline: none;
+    text-decoration: underline;
+}
+
+.d3 a:visited {
+    color: var(--link-visited);
+}
+
+/* Social icons */
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fly-in 1.5s ease-out;
+    margin: 50px 0;
+}
+
+.socials .icon-content {
+    margin: 0 10px;
+    position: relative;
+}
+
+.socials .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-p);
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.socials .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+.socials .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: var(--social-icon-color);
+    background-color: var(--social-icon-bg);
+    transition: all 0.3s ease-in-out;
+}
+
+.socials .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px var(--shadow-dark);
+}
+
+.socials .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.socials .icon-content a:hover {
+    color: white;
+}
+
+.socials .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--button-bg);
+    transition: all 0.3s ease-in-out;
+}
+
+.socials .icon-content a:hover .filled {
+    height: 100%;
+}
+
+.socials .icon-content a[data-social="github"] .filled,
+.socials .icon-content a[data-social="github"] ~ .tooltip {
+    background-color: var(--social-github-bg);
+}
+
+.socials .icon-content a[data-social="instagram"] .filled,
+.socials .icon-content a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(45deg,
+        var(--instagram-stop-1),
+        var(--instagram-stop-2),
+        var(--instagram-stop-3),
+        var(--instagram-stop-4),
+        var(--instagram-stop-5),
+        var(--instagram-stop-6));
+}
+
+.socials .icon-content a[data-social="youtube"] .filled,
+.socials .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: var(--social-youtube);
+}
+
+/* Buttons */
+.gh-button {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid var(--accent-cyan);
+    background: transparent;
+    box-shadow: 3px 3px var(--accent-cyan);
+    cursor: pointer;
+    margin: 35px 0;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    color: transparent;
+    background-image: linear-gradient(var(--link-grad-angle),
+        var(--link-grad-left) 0%,
+        var(--link-grad-right) 50%,
+        var(--link-grad-left) 100%);
+    background-size: 300% 100%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: link-gradient-slide var(--link-grad-speed) linear infinite;
+    transition: filter 160ms ease, box-shadow 160ms ease;
+}
+
+.gh-button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+
+.gh-button:hover,
+.gh-button:focus {
+    filter: brightness(1.08);
+    outline: none;
+}
+
+.gh-button.glow {
+    text-shadow: 0 0 8px rgba(255,255,255,0.06),
+                 0 0 20px rgba(0,180,255,0.12),
+                 0 0 32px rgba(255,60,60,0.08);
+}
+
+#image_animation {
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    user-select: none;
+}

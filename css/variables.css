@@ -1,0 +1,54 @@
+:root {
+    /* Base / backgrounds */
+    --bg-dark: #000000;
+    --bg-panel: rgba(0,0,0,0.7);
+    --nav-bg: rgba(0,0,0,0.8);
+    --footer-bg: rgba(0,0,0,0.8);
+
+    /* Text */
+    --text-p: #ffffff;
+    --text-th: #c4c3c3;
+    --text-th-border: #ffffff;
+
+    /* Accent / interactive */
+    --accent-cyan: #ffffff;
+    --accent-cyan-opaque: rgba(0,255,204,0.6);
+    --link: #0338e7;
+    --link-hover: #bb1818;
+    --link-visited: #910404;
+
+    /* Waves / neon */
+    --wave-blue-main: rgba(1, 90, 255, 0.98);
+    --wave-blue-mid: rgba(0, 98, 211, 0.6);
+    --wave-blue-light: rgba(0,120,255,0.08);
+
+    --wave-red-main: rgba(255,60,60,0.98);
+    --wave-red-mid: rgba(255,40,40,0.6);
+    --wave-red-light: rgba(255,0,0,0.06);
+
+    /* Link gradient */
+    --link-grad-left: rgb(3, 150, 248);
+    --link-grad-right: rgb(230, 31, 31);
+    --link-grad-angle: 90deg;
+    --link-grad-speed: 11s;
+
+    /* Social / brand */
+    --social-icon-color: #4d4d4d;
+    --social-icon-bg: #ffffff;
+    --social-github-bg: #24262a;
+    --social-youtube: #ff0000;
+    --instagram-stop-1: #405de6;
+    --instagram-stop-2: #5b51db;
+    --instagram-stop-3: #b33ab4;
+    --instagram-stop-4: #c135b4;
+    --instagram-stop-5: #e1306c;
+    --instagram-stop-6: #fd1f1f;
+
+    /* Shadows */
+    --shadow-glow: rgba(255, 40, 40, 0.6);
+    --shadow-dark: rgba(0,0,0,0.12);
+
+    /* Buttons */
+    --button-bg: #000000;
+    --button-text-on-accent: #000000;
+}

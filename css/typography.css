@@ -1,0 +1,94 @@
+p {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--text-p);
+}
+
+table {
+    width: 70%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    border-color: var(--accent-cyan);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    border-color: var(--text-th-border);
+    color: var(--text-th);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 16px;
+    color: var(--text-p);
+}
+
+.proficient {
+    color: var(--accent-cyan);
+    font-weight: bold;
+    opacity: 100%;
+}
+
+.intermediate {
+    color: var(--accent-cyan);
+    font-weight: bold;
+    opacity: 80%;
+}
+
+.basics {
+    color: var(--accent-cyan);
+    font-weight: bold;
+    opacity: 60%;
+}
+
+a.wave-gradient {
+    background: linear-gradient(var(--link-grad-angle),
+        var(--link-grad-left) 0%,
+        var(--link-grad-right) 50%,
+        var(--link-grad-left) 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    transition: filter 200ms ease, opacity 200ms ease;
+    display: inline-block;
+    will-change: background-position, filter;
+    animation: link-gradient-slide var(--link-grad-speed) linear infinite;
+}
+
+a.wave-gradient.glow {
+    text-shadow: 0 0 8px rgba(255,255,255,0.08), 0 0 18px rgba(0,180,255,0.12);
+}
+
+a.wave-gradient.underline {
+    color: var(--text-p);
+    background: none;
+    background-image: linear-gradient(var(--link-grad-angle), var(--link-grad-left), var(--link-grad-right));
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    text-decoration: none;
+}
+
+a.wave-gradient.underline:hover,
+a.wave-gradient.underline:focus {
+    background-size: 100% 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    a.wave-gradient {
+        animation: none;
+        background-position: 50% 50%;
+        transition: none;
+    }
+}

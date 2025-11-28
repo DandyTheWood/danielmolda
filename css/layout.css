@@ -1,0 +1,121 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding: 10%;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.welcome {
+    padding: 5%;
+    border-radius: 2%;
+    text-align: center;
+    width: 35%;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-p);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: smooth_appear 2s ease-out;
+}
+
+#welcome_animation {
+    animation: smooth_appear 2s ease-out;
+}
+
+#image_animation {
+    animation: fly-in 2s ease-out forwards;
+}
+
+.d1, .d2 {
+    position: relative;
+    background: var(--bg-panel);
+    padding: 5%;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    box-shadow: 0px 0px 5% var(--shadow-glow);
+    width: 35%;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    animation: smooth_appear 2.3s ease-out;
+    color: var(--text-p);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d2 {
+    width: 30%;
+    padding: 2%;
+}
+
+.d2 img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    padding: 0;
+}
+
+.d3, .d4 {
+    background: var(--bg-panel);
+    padding: 5%;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    box-shadow: 0px 0px 5% var(--shadow-glow);
+    width: 90%;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    animation: smooth_appear 3s ease-out;
+    color: var(--text-p);
+}
+
+.d3 h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.d3 > img,
+.d3 > a > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.d3 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
+.d3 .img_left,
+.d3 .img_right {
+    width: 42%;
+    max-width: 420px;
+    min-width: 180px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px;
+}
+
+.d3 .img_left { float: left; }
+.d3 .img_right { float: right; }
+
+.d3::after {
+    content: "";
+    display: table;
+    clear: both;
+}
