@@ -183,6 +183,9 @@
         <p>
             I installed <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview" target="_blank">Proxmox VE 8.4</a> on my unused desktop PC. It's an HP M01-F1003nc equipped with an Intel Core i5-10400F (Comet Lake, 4.3 GHz), NVIDIA GeForce GTX 1650 Super (4 GB), 8 GB DDR4 RAM, and a 512 GB SSD. The installation process was challenging due to HP's limited Linux compatibility. I had to modify the boot parameters to get the installer running and manually install the bootloader in rescue mode to complete the setup.
         </p>
+        <p>
+            Now I run two LXC containers, <a href="#twingate">Twingate</a> connector and <a href="#adguard_dns">AdGuard Home</a>. Additionally, I have several virtual machines such as <a href="https://www.truenas.com/" target="_blank">TrueNAS Scale</a> server for network-attached storage or Parrot security for pentesting.
+        </p>
         <h2>Cybersecurity homelab</h2>
         <p>
             I have set up a <a href="https://www.parrotsec.org/" target="_blank">Parrot security</a> Linux virtual machine on a Proxmox VE hypervisor, that comes preinstalled with plenty of penetration testing tools, alongside VMs running Windows 10, <a href="https://www.linuxmint.com/" target="_blank">Linux Mint</a> hosting <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank">Apache2</a> website and <a href="https://fedoraproject.org/" target="_blank">Fedora Server</a>, which I currently don't have a specific use case for. Over the next few weeks, I intend to configure various vulnerabilities and insecure settings within these guest systems to create a controlled lab environment for practicing exploitation techniques and testing offensive security tools. I have alredy done autorun script for reverse shell using netcat Linux to Linux but I want to do something more complex next time.
@@ -202,7 +205,7 @@
         <img src="images/thinkpad_deb.jpg" alt="Lenovo ThinkPad Debian" class="img_right">
         <p>My experience with Linux is quite broad. I have worked with <a href="https://www.debian.org/" target="_blank">Debian</a>-based distributions such as <a href="https://ubuntu.com/" target="_blank">Ubuntu</a> (both desktop and server) and <a href="https://linuxmint.com/" target="_blank">Linux Mint</a>, as well as <a href="https://archlinux.org/" target="_blank">Arch Linux</a>.</p>
         <p>I am experienced in using <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH</a> for remote management and performing server maintenance. Additionally, I have used various system monitoring tools, including <a href="https://nicolargo.github.io/glances/" target="_blank">Glances</a>, <a href="https://en.wikipedia.org/wiki/Top_(software)" target="_blank">top</a>, and <a href="https://htop.dev/" target="_blank">htop</a>.</p>
-        <p>I've been working on my laptops since 2022. Now I daily drive <a href="https://www.debian.org/" target="_blank">Debian</a> on a <a href="https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadt/thinkpad-t480s/22tp2tt480s" target="_blank">Lenovo ThinkPad T480s</a> that I bought this year. Before Debian I used <a href="https://archlinux.org/" target="_blank">Arch Linux</a> with <a href="https://kde.org/plasma-desktop/" target="_blank">KDE Plasma</a> and then <a href="https://hyprland.org/" target="_blank">Hyprland</a>. Since I started exploring Linux distributions and upgrading my laptops, I've swapped the battery and installed the <a href="https://linuxmint.com/" target="_blank">Linux Mint</a> distribution on a Toshiba laptop. I plan to upgrade the RAM on both laptops and replace the fan on the Toshiba because it's a bit worn out. I love working on all my laptops because it allows me to learn more about hardware and different Linux distributions.</p>
+        <p>I've been working on my laptops since 2022. Now I daily drive <a href="https://www.debian.org/" target="_blank">Debian</a> on a <a href="https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadt/thinkpad-t480s/22tp2tt480s" target="_blank">Lenovo ThinkPad T480s</a> witch I own since december 2024. Before Debian I used <a href="https://archlinux.org/" target="_blank">Arch Linux</a> with <a href="https://kde.org/plasma-desktop/" target="_blank">KDE Plasma</a> and then <a href="https://hyprland.org/" target="_blank">Hyprland</a>. Since I started exploring Linux distributions and upgrading my laptops, I've swapped the battery and installed the <a href="https://linuxmint.com/" target="_blank">Linux Mint</a> distribution on a Toshiba laptop. I plan to upgrade the RAM on both laptops and replace the fan on the Toshiba because it's a bit worn out. I love working on all my laptops because it allows me to learn more about hardware and different Linux distributions.</p>
         <h2>My Laptops and Linux Distributions I've Worked With</h2>
         <table>
             <thead>
@@ -622,7 +625,7 @@
 <footer>
     <p style="text-align: center;">
         Created by Daniel Molda 2024<br>
-        Last updated on <span id="current-date">08.01.2026</span><br>
+        Last updated on <span id="current-date">15.01.2026</span><br>
         email: <a href="mailto:danielmolda1@gmail.com">danielmolda1@gmail.com</a><br>
         View my CV <a href="zivotopis-dmolda.pdf" target="_blank">here</a>
     </p>
