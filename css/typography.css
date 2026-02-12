@@ -31,7 +31,7 @@ td {
     color: var(--text-p);
 }
 
-.proficient {
+.advanced{
     color: var(--accent-cyan);
     font-weight: bold;
     opacity: 100%;

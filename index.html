@@ -73,7 +73,7 @@
                             <a href="#other">Other</a>
                         </div>
                     </div>
-                    
+
                     <a href="zivotopis-dmolda.pdf" target="_blank">My CV</a>
                 </div>
             </div>
@@ -136,8 +136,8 @@
                     <th>Proficiency Level</th>
                 </tr>
                 <tr>
-                    <td>Linux (Arch/Debian based)</td>
-                    <td class="intermediate">Intermediate</td>
+                    <td>Linux (Debian based)</td>
+                    <td class="advanced">Advanced</td>
                 </tr>
                 <tr>
                     <td>Networking (Cisco IOS)</td>
@@ -314,7 +314,7 @@
     <div class="d3">
         <h1>Photography Gallery</h1>
         <hr>
-        
+
         <!-- Girl in Rain Section -->
         <h2 id="girl">Girl in Rain</h2>
         <div class="gallery-grid">
@@ -553,13 +553,13 @@
         const prevBtn = document.querySelector('.lightbox-prev');
         const nextBtn = document.querySelector('.lightbox-next');
         const galleryLinks = document.querySelectorAll('.gallery-link');
-        
+
         let currentIndex = 0;
         const imageUrls = Array.from(galleryLinks).map(link => link.getAttribute('href'));
-        const imageAltTexts = Array.from(galleryLinks).map(link => 
+        const imageAltTexts = Array.from(galleryLinks).map(link =>
             link.querySelector('img').getAttribute('alt')
         );
-        
+
         function openLightbox(index) {
             if (imageUrls.length === 0) return;
             currentIndex = Math.max(0, Math.min(index, imageUrls.length - 1));
@@ -568,24 +568,24 @@
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-        
+
         function closeLightbox() {
             lightbox.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-        
+
         function showPrev() {
             currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
             lightboxImage.src = imageUrls[currentIndex];
             lightboxText.textContent = imageAltTexts[currentIndex];
         }
-        
+
         function showNext() {
             currentIndex = (currentIndex + 1) % imageUrls.length;
             lightboxImage.src = imageUrls[currentIndex];
             lightboxText.textContent = imageAltTexts[currentIndex];
         }
-        
+
         // Add click event listeners to all gallery links
         galleryLinks.forEach((link, index) => {
             link.addEventListener('click', function(e) {
@@ -593,12 +593,12 @@
                 openLightbox(index);
             });
         });
-        
+
         // Close button
         if (closeBtn) {
             closeBtn.addEventListener('click', closeLightbox);
         }
-        
+
         // Navigation buttons
         if (prevBtn) {
             prevBtn.addEventListener('click', showPrev);
@@ -606,16 +606,16 @@
         if (nextBtn) {
             nextBtn.addEventListener('click', showNext);
         }
-        
+
         // Keyboard navigation
         document.addEventListener('keydown', function(e) {
             if (!lightbox.classList.contains('active')) return;
-            
+
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowLeft') showPrev();
             if (e.key === 'ArrowRight') showNext();
         });
-        
+
         // Close on background click
         lightbox.addEventListener('click', function(e) {
             if (e.target === lightbox) closeLightbox();
@@ -625,7 +625,7 @@
 <footer>
     <p style="text-align: center;">
         Created by Daniel Molda 2024<br>
-        Last updated on <span id="current-date">15.01.2026</span><br>
+        Last updated on <span id="current-date">12.02.2026</span><br>
         email: <a href="mailto:danielmolda1@gmail.com">danielmolda1@gmail.com</a><br>
         View my CV <a href="zivotopis-dmolda.pdf" target="_blank">here</a>
     </p>
