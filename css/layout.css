@@ -3,19 +3,20 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 5%;
-    padding: 10%;
-    margin-top: 0px;
+    gap: 4%;
+    padding: 4%;
+    margin-top: 0;
     width: 100%;
 }
 
 .welcome {
-    padding: 5%;
+    padding: 3%;
     border-radius: 2%;
     text-align: center;
-    width: 35%;
-    font-size: 1.5rem;
-    line-height: 1.8;
+    width: 60%;
+    max-width: 900px;
+    font-size: 1.8rem;
+    line-height: 1.6;
     color: var(--text-p);
     display: flex;
     flex-direction: column;
@@ -35,15 +36,15 @@
 .d1, .d2 {
     position: relative;
     background: var(--bg-panel);
-    padding: 5%;
+    padding: 3%;
     text-align: center;
     border: 2px solid #000;
     border-radius: 15px;
     -moz-border-radius: 15px;
     box-shadow: 0px 0px 5% var(--shadow-glow);
-    width: 35%;
-    font-size: 1.5rem;
-    line-height: 1.8;
+    width: 45%;
+    font-size: 1.2rem;
+    line-height: 1.6;
     animation: smooth_appear 2.3s ease-out;
     color: var(--text-p);
     display: flex;
@@ -52,7 +53,7 @@
 }
 
 .d2 {
-    width: 30%;
+    width: 35%;
     padding: 2%;
 }
 

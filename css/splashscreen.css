@@ -7,12 +7,12 @@
     justify-content: center;
     align-items: center;
     z-index: 99999;
+    transition: opacity .35s ease-in-out;
 }
 
 #loader-overlay.hidden {
     opacity: 0;
     pointer-events: none;
-    transition: opacity .35s ease-in-out;
 }
 
 /* From Uiverse.io by Nawsome */ 

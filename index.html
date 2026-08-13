@@ -1,635 +1,734 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Daniel Molda</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Molda</title>
-    <link rel="stylesheet" href="css/splashscreen.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/typography.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="css/lightbox.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifests">
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/splashscreen.css">
+        <link rel="stylesheet" href="css/navigation.css">
+        <link rel="stylesheet" href="css/typography.css">
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/components.css">
+        <link rel="stylesheet" href="css/gallery.css">
+        <link rel="stylesheet" href="css/lightbox.css">
+        <link rel="stylesheet" href="css/responsive.css">
 
-</head>
+        <!-- Fonts & Icons -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+    </head>
 
-<body>
-    <div id="loader-overlay">
-        <div class="banter-loader">
-            <div class="banter-loader__box"></div>
-            <div class="banter-loader__box"></div>
-            <div class="banter-loader__box"></div>
-            <div class="banter-loader__box"></div>
-            <div class="banter-loader__box"></div>
-            <div class="banter-loader__box"></div>
-            <div class="banter-loader__box"></div>
-            <div class="banter-loader__box"></div>
-            <div class="banter-loader__box"></div>
-        </div>
-    </div>
+    <!-- Scripts -->
+    <script src="scripts/loader.js" defer></script>
+    <script src="scripts/image-lazy.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/lightbox.js" defer></script>
 
-    <nav>
-        <div class="menu-container">
-            <a href="#index" class="dmolda_button">
-                <span class="actual-text">&nbsp;Daniel&nbsp;Molda&nbsp;</span>
-            </a>
-            <div class="dropdown">
-                <button class="dropdown-button">Menu</button>
-                <div class="dropdown-content">
-                    <a href="#aboutme">About Me</a>
-                    <div class="nested-dropdown">
-                        <a href="#it_stuff">IT Projects</a>
-                        <div class="nested-dropdown-content">
-                            <a href="#proxmox">Proxmox homelab</a>
-                            <a href="#linux">Linux and Hardware</a>
-                            <a href="#adguard_dns">AdGuard DNS</a>
-                            <a href="#zabbix">Zabbix</a>
-                            <a href="#twingate">Twingate</a>
-                            <a href="#atari">Atari 130XE</a>
-                            <a href="#tails">TailsOS</a>
-                            <a href="#web_server">Linux web server</a>
-                        </div>
-                    </div>
-                    <div class="nested-dropdown">
-                        <a href="#photography">Photography</a>
-                        <div class="nested-dropdown-content">
-                            <a href="#girl">Girl in rain</a>
-                            <a href="#autumn_portraits">Autumn portraits</a>
-                            <a href="#croatia">Croatia</a>
-                            <a href="#scotland">Scotland</a>
-                            <a href="#trnava">Trnava</a>
-                            <a href="#products">Product Photography</a>
-                            <a href="#other">Other</a>
-                        </div>
-                    </div>
-
-                    <a href="zivotopis-dmolda.pdf" target="_blank">My CV</a>
-                </div>
+    <body>
+        <div id="loader-overlay">
+            <div class="banter-loader">
+                <div class="banter-loader__box"></div>
+                <div class="banter-loader__box"></div>
+                <div class="banter-loader__box"></div>
+                <div class="banter-loader__box"></div>
+                <div class="banter-loader__box"></div>
+                <div class="banter-loader__box"></div>
+                <div class="banter-loader__box"></div>
+                <div class="banter-loader__box"></div>
+                <div class="banter-loader__box"></div>
             </div>
         </div>
-    </nav>
-    <div class="main" id="index">
-        <div class="welcome">
-            <h2 id="welcome_animation">Welcome on my personal website</h2>
-            <br>
-            <ul class="socials">
-                <li class="icon-content">
-                    <a href="https://github.com/DandyTheWood" aria-label="GitHub" data-social="github" target="_blank">
-                        <div class="filled"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" xml:space="preserve">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" fill="currentColor"></path>
-                        </svg>
+
+        <nav>
+            <div class="menu-container">
+                <a href="#index" class="dmolda_button">
+                    <span class="actual-text">Daniel Molda</span>
+                </a>
+
+                <div class="dropdown">
+                    <button class="dropdown-button">Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#aboutme">About Me</a>
+
+                        <div class="nested-dropdown">
+                            <a href="#it_stuff">IT Projects</a>
+                            <div class="nested-dropdown-content">
+                                <a href="#proxmox">Proxmox Homelab</a>
+                                <a href="#linux">Linux and Hardware</a>
+                                <a href="#adguard_dns">AdGuard DNS</a>
+                                <a href="#zabbix">Zabbix</a>
+                                <a href="#twingate">Twingate</a>
+                                <a href="#atari">Atari 130XE</a>
+                                <a href="#tails">TailsOS</a>
+                                <a href="#web_server">Linux Web Server</a>
+                            </div>
+                        </div>
+
+                        <div class="nested-dropdown">
+                            <a href="#photography">Photography</a>
+                            <div class="nested-dropdown-content">
+                                <a href="#girl">Girl in Rain</a>
+                                <a href="#autumn_portraits">Autumn Portraits</a>
+                                <a href="#croatia">Croatia</a>
+                                <a href="#scotland">Scotland</a>
+                                <a href="#trnava">Trnava</a>
+                                <a href="#products">Product Photography</a>
+                                <a href="#other">Other</a>
+                            </div>
+                        </div>
+
+                        <a href="zivotopis-dmolda.pdf" target="_blank" rel="noopener">My CV</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <section class="main" id="index">
+                <div class="welcome">
+                    <h2 id="welcome_animation">Welcome to my personal website</h2>
+
+                    <!-- Social icons -->
+                    <ul class="socials">
+
+                        <!-- GitHub -->
+                        <li class="icon-content">
+                            <a href="https://github.com/DandyTheWood" aria-label="GitHub" data-social="github" target="_blank">
+                                <div class="filled"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" xml:space="preserve">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <div class="tooltip">GitHub</div>
+                        </li>
+
+                        <!-- Instagram -->
+                        <li class="icon-content">
+                            <a href="https://www.instagram.com/_.danci._bass_/" aria-label="Instagram" data-social="instagram" target="_blank">
+                                <div class="filled"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16" xml:space="preserve">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <div class="tooltip">Instagram</div>
+                        </li>
+
+                        <!-- YouTube -->
+                        <li class="icon-content">
+                            <a href="https://www.youtube.com/@dandythewood" aria-label="YouTube" data-social="youtube" target="_blank">
+                                <div class="filled"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16" xml:space="preserve">
+                                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" fill="currentColor"></path>
+                                </svg>
+                            </a>
+                            <div class="tooltip">YouTube</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d2">
+                    <img id="image_animation" src="images/my_photo/my_photo_serious.webp" alt="Portrait of Daniel Molda" fetchpriority="high" decoding="async">
+                </div>
+            </section>
+
+            <section class="main" id="aboutme">
+                <div class="d3">
+                    <h1>About Me</h1>
+                    <hr>
+
+                    <p>My name is Daniel Molda. I am a 20-year-old graduate of Information and Network Technologies from the <a href="https://www.sosha.sk/" target="_blank" rel="noopener">Secondary Vocational School in Handlová</a>.</p>
+
+                    <p>I am mainly interested in Linux, computer networking, and server administration. I also enjoy programming and learning about new technologies.</p>
+
+                    <p>In 2025, I began studying at the University of Žilina (<a href="https://www.uniza.sk/" target="_blank" rel="noopener">Žilinská univerzita v Žiline</a>), at the Faculty of Management Science and Informatics (<a href="https://www.fri.uniza.sk/" target="_blank" rel="noopener">Fakulta riadenia a informatiky</a>), where I study computer science. My goal is to focus primarily on server administration, networking, and related technologies.</p>
+
+                    <p>Alongside my studies, I work as a radio technician at the student organization <a href="https://www.radiox.sk/" target="_blank" rel="noopener">RádioX</a>, where I also help with IT-related tasks. I also volunteer at the Free Time Center in Prievidza, where I help organize and prepare various events. In my free time, I enjoy photography and play bass guitar in a band.</p>
+
+                    <a href="zivotopis-dmolda.pdf" target="_blank" rel="noopener"><button class="gh-button">View My CV</button></a>
+
+                    <h2>Expertise</h2>
+                    <hr>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Area</th>
+                                <th>Proficiency Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Linux (Debian-based)</td>
+                                <td class="advanced">Advanced</td>
+                            </tr>
+                            <tr>
+                                <td>Networking (Cisco IOS)</td>
+                                <td class="intermediate">Intermediate</td>
+                            </tr>
+                            <tr>
+                                <td>Zabbix</td>
+                                <td class="basics">Basic</td>
+                            </tr>
+                            <tr>
+                                <td>Python</td>
+                                <td class="intermediate">Intermediate</td>
+                            </tr>
+                            <tr>
+                                <td>Java</td>
+                                <td class="intermediate">Intermediate</td>
+                            </tr>
+                            <tr>
+                                <td>C (Programming Language)</td>
+                                <td class="basics">Basic</td>
+                            </tr>
+                            <tr>
+                                <td>Hardware</td>
+                                <td class="intermediate">Intermediate</td>
+                            </tr>
+                            <tr>
+                                <td>Web Development (HTML, CSS, JavaScript, PHP)</td>
+                                <td class="intermediate">Intermediate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="main" id="it_stuff">
+                <div class="d3" id="proxmox">
+                    <hr>
+                    <h1>Homelab with</h1>
+
+                    <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview" target="_blank" rel="noopener">
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewsletter.proxmox.com%2Fuploads%2FProxmox-logo-white-orange-800_1.png&f=1&nofb=1&ipt=bc5f8482b56941cd3f5d90875fd3ed955ef677d16ddc2ff762973762dc8b9144" style="width: 90%; height: 90%;" alt="Proxmox logo">
                     </a>
-                    <div class="tooltip">GitHub</div>
-                </li>
-                <li class="icon-content">
-                    <a href="https://www.instagram.com/_.danci._bass_/" aria-label="Instagram" data-social="instagram" target="_blank">
-                        <div class="filled"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16" xml:space="preserve">
-                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" fill="currentColor"></path>
-                        </svg>
+
+                    <hr><br>
+
+                    <h2>About the Device I Use</h2>
+
+                    <p>
+                        I installed <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview" target="_blank" rel="noopener">Proxmox VE 8.4</a> on an unused desktop PC. It is an HP M01-F1003nc equipped with an Intel Core i5-10400F processor (Comet Lake, up to 4.3 GHz), an NVIDIA GeForce GTX 1650 Super with 4 GB of VRAM, 8 GB of DDR4 RAM, and a 512 GB SSD. The installation was challenging because of HP's limited Linux compatibility. I had to modify the boot parameters to get the installer running and manually install the bootloader in rescue mode to complete the setup.
+                    </p>
+
+                    <p>
+                        I currently run two LXC containers: a <a href="#twingate">Twingate</a> connector and <a href="#adguard_dns">AdGuard Home</a>. In addition, I run several virtual machines, including a <a href="https://www.truenas.com/" target="_blank" rel="noopener">TrueNAS Scale</a> server for network-attached storage and a Parrot Security virtual machine for penetration testing.
+                    </p>
+
+                    <h2>Cybersecurity Homelab</h2>
+
+                    <p>
+                        I have set up a <a href="https://www.parrotsec.org/" target="_blank" rel="noopener">Parrot Security</a> Linux virtual machine on my Proxmox VE hypervisor. It comes with a wide range of penetration testing and security tools. I also run virtual machines with Windows 10, <a href="https://www.linuxmint.com/" target="_blank" rel="noopener">Linux Mint</a> hosting an <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank" rel="noopener">Apache2</a> website, and <a href="https://fedoraproject.org/" target="_blank" rel="noopener">Fedora Server</a>, which I currently do not have a specific use for.
+                    </p>
+
+                    <p>
+                        Over the next few weeks, I intend to configure various vulnerabilities and insecure settings within these guest systems to create a controlled environment for practicing security testing, exploitation techniques, and the use of offensive security tools. I have already created an autorun script that establishes a reverse shell using Netcat between two Linux systems, but I would like to build something more complex in the future.
+                    </p>
+
+                    <h2>BSD</h2>
+
+                    <p>
+                        I wanted to gain more experience with <a href="https://en.wikipedia.org/wiki/List_of_BSD_operating_systems" target="_blank" rel="noopener">BSD</a> and other real UNIX-based operating systems, rather than working only with <a href="https://en.wikipedia.org/wiki/Unix-like" target="_blank" rel="noopener">UNIX-like</a> systems such as Linux distributions. I am interested in how BSD differs from Linux, particularly in areas such as system structure, networking, and security.
+                    </p>
+
+                    <p>
+                        I set up FreeBSD in a virtual machine and learned how package management and user management work compared to Linux. I plan to explore FreeBSD further in the future. I would also like to try OpenBSD and NetBSD, as they have different focuses and strengths. I believe that learning about BSD will give me a broader understanding of operating systems and help me become a better system administrator.
+                    </p>
+
+                    <p>
+                        I have not done much with BSD yet because of time limitations, but I am sure that I want to explore it further in the future.
+                    </p>
+                </div>
+
+                <div class="d3" id="linux">
+                    <hr>
+                    <h1>My Linux and Hardware Journey</h1>
+                    <hr><br>
+
+                    <img src="images/thinkpad_deb.jpg" alt="Lenovo ThinkPad running Debian" class="img_right">
+
+                    <p>
+                        My experience with Linux is quite broad. I have worked with <a href="https://www.debian.org/" target="_blank" rel="noopener">Debian</a>-based distributions such as <a href="https://ubuntu.com/" target="_blank" rel="noopener">Ubuntu</a>, both desktop and server editions, and <a href="https://linuxmint.com/" target="_blank" rel="noopener">Linux Mint</a>, as well as <a href="https://archlinux.org/" target="_blank" rel="noopener">Arch Linux</a>.
+                    </p>
+
+                    <p>
+                        I am experienced in using <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank" rel="noopener">SSH</a> for remote administration and server maintenance. I have also used various system monitoring tools, including <a href="https://nicolargo.github.io/glances/" target="_blank" rel="noopener">Glances</a>, <a href="https://en.wikipedia.org/wiki/Top_(software)" target="_blank" rel="noopener">top</a>, and <a href="https://htop.dev/" target="_blank" rel="noopener">htop</a>.
+                    </p>
+
+                    <p>
+                        I have been working with laptops since 2022. I currently use <a href="https://www.debian.org/" target="_blank" rel="noopener">Debian</a> as my daily operating system on a <a href="https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadt/thinkpad-t480s/22tp2tt480s" target="_blank" rel="noopener">Lenovo ThinkPad T480s</a>, which I have owned since December 2024.
+                    </p>
+
+                    <p>
+                        Before switching to Debian, I used <a href="https://archlinux.org/" target="_blank" rel="noopener">Arch Linux</a> with <a href="https://kde.org/plasma-desktop/" target="_blank" rel="noopener">KDE Plasma</a> and later <a href="https://hyprland.org/" target="_blank" rel="noopener">Hyprland</a>. While exploring Linux distributions and upgrading my laptops, I replaced the battery and installed <a href="https://linuxmint.com/" target="_blank" rel="noopener">Linux Mint</a> on a Toshiba laptop.
+                    </p>
+
+                    <p>
+                        I plan to upgrade the RAM in both laptops and replace the fan in the Toshiba because it is starting to wear out. I enjoy working on my laptops because it gives me an opportunity to learn more about computer hardware and experiment with different Linux distributions.
+                    </p>
+
+                    <h2>My Laptops and Linux Distributions</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Laptop/PC</th>
+                                <th>Linux Distribution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lenovo ThinkPad T480s</td>
+                                <td>
+                                    <div>Arch (KDE, Hyprland)</div>
+                                    <div>Debian (GNOME)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Toshiba Portege Z830</td>
+                                <td>
+                                    <div>Linux Mint (Cinnamon, Xfce)</div>
+                                    <div>Fedora Workstation (GNOME)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Asus X51R</td>
+                                <td>
+                                    <div>Fedora Workstation (GNOME)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Proxmox VM (HP M01-F1003nc)</td>
+                                <td>
+                                    <div>Ubuntu Server (Terminal)</div>
+                                    <div>Fedora Server (Web UI, Terminal)</div>
+                                    <div>TrueNAS Scale (Web UI, Terminal)</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d3" id="adguard_dns">
+                    <hr>
+                    <h1>Self-Hosted DNS Server</h1>
+                    <hr><br>
+
+                    <img src="https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/doc/adguard_home_darkmode.svg" class="img_right" alt="AdGuard logo" style="border: none;">
+
+                    <p>
+                        I self-host <a href="https://adguard.com/en/adguard-home/overview.html" target="_blank" rel="noopener">AdGuard Home</a> to block advertisements and protect my devices from online threats. It filters malicious domains, improves privacy, and helps keep my entire network safer without relying on third-party DNS services.
+                    </p>
+
+                    <img src="images/adguard_blaocklist.png" class="img_left" alt="My AdGuard blocklist">
+
+                    <p>
+                        I chose <a href="https://adguard.com/en/adguard-home/overview.html" target="_blank" rel="noopener">AdGuard Home</a> because it provides a clean and intuitive web interface that makes configuration and management straightforward. Its simplicity was an important factor because I wanted a reliable <a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="_blank" rel="noopener">DNS</a> solution without unnecessary complexity.
+                    </p>
+
+                    <p>
+                        I configured custom <a href="https://en.wikipedia.org/wiki/Domain_Name_System#Recursive_and_caching_resolvers" target="_blank" rel="noopener">upstream DNS servers</a> to provide fast and secure domain resolution. I also enabled several <a href="https://oisd.nl/" target="_blank" rel="noopener">DNS blocklists</a> to block <a href="https://en.wikipedia.org/wiki/Online_advertising" target="_blank" rel="noopener">advertisements</a>, <a href="https://en.wikipedia.org/wiki/Phishing" target="_blank" rel="noopener">phishing</a> attempts, <a href="https://en.wikipedia.org/wiki/Online_tracking" target="_blank" rel="noopener">tracking services</a>, and other <a href="https://en.wikipedia.org/wiki/Malware" target="_blank" rel="noopener">malicious websites</a>.
+                    </p>
+
+                    <p>
+                        This setup helps protect every device on my network while also improving browsing speed and privacy.
+                    </p>
+                </div>
+
+                <div class="d3" id="zabbix">
+                    <hr>
+                    <h1>Network Monitoring with</h1>
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Zabbix_logo.png" style="width: 55%; height: 55%;" alt="Zabbix logo">
+
+                    <hr><br>
+
+                    <p>
+                        I set up <a href="https://www.zabbix.com/" target="_blank" rel="noopener">Zabbix</a> to monitor my home network and servers. It provides real-time information about system performance and network activity.
+                    </p>
+
+                    <p>
+                        With Zabbix, I can monitor important metrics such as CPU load, memory usage, disk space, and network traffic across my devices. Its customizable dashboards provide a clear overview of the current state of my systems.
+                    </p>
+
+                    <p>
+                        Overall, Zabbix has become a valuable tool for maintaining the reliability and efficiency of my home network.
+                    </p>
+                </div>
+
+                <div class="d3" id="twingate">
+                    <hr>
+                    <br>
+
+                    <a href="https://www.twingate.com/" target="_blank" rel="noopener">
+                        <img src="https://storage.googleapis.com/afs-prod/media/5ab8d13687ffa4f650a97a7ffc4ffb7c/1713.jpeg" style="width: 90%; height: 90%; filter: invert(100%); background-color: white;" alt="Twingate logo">
                     </a>
-                    <div class="tooltip">Instagram</div>
-                </li>
-                <li class="icon-content">
-                    <a href="https://www.youtube.com/@dandythewood" aria-label="Youtube" data-social="youtube" target="_blank">
-                        <div class="filled"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16" xml:space="preserve">
-                            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" fill="currentColor"></path>
-                        </svg>
+
+                    <h1>Secure Tunnel to My Local Network</h1>
+                    <hr><br>
+
+                    <img src="images/twingate.png" class="img_left" alt="Twingate homepage">
+
+                    <p>
+                        <a href="https://www.twingate.com/" target="_blank" rel="noopener">Twingate</a> is a modern and secure remote access solution that provides an alternative to traditional <a href="https://en.wikipedia.org/wiki/Virtual_private_network" target="_blank" rel="noopener">VPNs</a>. It allows users to securely connect to private resources such as internal servers, applications, and databases without exposing the entire network.
+                    </p>
+
+                    <p>
+                        Twingate uses a <a href="https://en.wikipedia.org/wiki/Zero_trust_security_model" target="_blank" rel="noopener">zero-trust</a> approach, meaning that each user or device receives access only to the resources they actually need.
+                    </p>
+
+                    <img src="images/twingate_groups.png" class="img_right" alt="Twingate groups">
+
+                    <p>
+                        To enable secure remote access with Twingate, I set up a dedicated virtual machine on my <a href="https://www.proxmox.com/en/proxmox-virtual-environment/overview" target="_blank" rel="noopener">Proxmox</a> server. The VM runs a <a href="https://www.docker.com/" target="_blank" rel="noopener">Docker</a> container with the Twingate Connector, which acts as a secure gateway between Twingate and my private network.
+                    </p>
+
+                    <img src="images/twingate_network.png" class="img_left" alt="Twingate devices">
+
+                    <p>
+                        After creating the VM, I installed Docker and deployed the Twingate Connector using the configuration provided in the Twingate administration panel. The setup was simple and efficient. I registered the Connector with my Twingate network, copied the automatically generated Docker run command, and launched the container.
+                    </p>
+
+                    <p>
+                        Once running, the Connector established a secure, encrypted connection to Twingate's cloud infrastructure. This allows authorized users to access my <a href="https://www.truenas.com/" target="_blank" rel="noopener">TrueNAS</a> server on ports 137-139 and <a href="https://en.wikipedia.org/wiki/Server_Message_Block" target="_blank" rel="noopener">445</a> (SMB).
+                    </p>
+
+                    <p>
+                        As the administrator, I can also manage internal services such as <a href="https://adguard.com/en/adguard-home/overview.html" target="_blank" rel="noopener">AdGuard Home</a>, TrueNAS, and Proxmox web interfaces without exposing any part of my local network directly to the public internet.
+                    </p>
+                </div>
+
+                <div class="d3" id="atari">
+                    <hr>
+                    <h1>Atari 130XE and the BASIC Programming Language</h1>
+                    <hr><br>
+
+                    <img src="images/atari.png" class="img_right" alt="Atari 130XE" style="border: none;">
+
+                    <p>
+                        I recently got an old <a href="https://en.wikipedia.org/wiki/Atari_8-bit_computers#XE_series" target="_blank" rel="noopener">Atari 130XE</a> from my dad's uncle, along with several game tapes, a tape recorder, and two joysticks. I have not played any of the games yet because I could not get them to run. The tape recorder probably needs to have its playback head cleaned.
+                    </p>
+
+                    <img src="images/atari_code.gif" class="img_left" alt="Me programming on the Atari">
+
+                    <p>
+                        I was still excited to try programming on the computer. In just half an hour, I wrote my own <a href="https://en.wikipedia.org/wiki/BASIC" target="_blank" rel="noopener">BASIC</a> program that displays my name inside a flashing box.
+                    </p>
+
+                    <p>
+                        I really enjoy working with retro 8-bit computers. It is a fun way to experience the technology and programming of earlier generations.
+                    </p>
+                </div>
+
+                <div class="d3" id="tails">
+                    <hr>
+                    <h1>Exploration of</h1>
+
+                    <a href="https://tails.net/" target="_blank" rel="noopener">
+                        <img src="https://tails.net/lib/logo.svg" alt="Tails OS logo">
                     </a>
-                    <div class="tooltip">Youtube</div>
-                </li>
-            </ul>
-        </div>
-        <div class="d2">
-            <img id="image_animation" src="images/my_photo/my_photo_serious.webp" alt="my photo" fetchpriority="high" decoding="async">
-        </div>
-    </div>
-    <div class="main" id="aboutme">
-      <div class="d3">
-        <h1>About me</h1>
-        <hr>
-        <p>My name is Daniel Molda. I am a 20 year old graduate of Information and Network Technologies from the <a href="https://www.sosha.sk/" target="_blank">secondary vocational school in Handová</a>.</p>
-        <p>I am mainly dedicated Linux, networking and server administration but also programming.</p>
-        <p>In 2025, I have started my studies at the University of Žilina (<a href="https://www.uniza.sk/" target="_blank">Žilinská univerzita v Žiline</a>), at the Faculty of Management science and Informatics (<a href="https://www.fri.uniza.sk/" target="_blank">Fakulta riadenia a informatiky</a>), where I am studying computer science. My goal is to focus on more server and networking subjects.</p>
-        <p>In addition to my studies, I work as a radio technician at the student organization <a href="https://www.radiox.sk/" target="_blank">"RádioX"</a>, where I also do IT-related work. I also volunteer at the Free Time Center in Prievidza, helping with the organization and preparation of events. In my free time, I enjoy photography and play bass guitar in a band.</p>
-        <a href="zivotopis-dmolda.pdf" target="_blank"><button class="gh-button">Link to my CV</button></a>
-        <br>
-        <h1>Expertiese</h1>
-        <hr>
-        <p>
-            <table>
-                <tr>
-                    <th>Area</th>
-                    <th>Proficiency Level</th>
-                </tr>
-                <tr>
-                    <td>Linux (Debian based)</td>
-                    <td class="advanced">Advanced</td>
-                </tr>
-                <tr>
-                    <td>Networking (Cisco IOS)</td>
-                    <td class="intermediate">Intermediate</td>
-                </tr>
-                <tr>
-                    <td>Zabbix</td>
-                    <td class="basics">Basics</td>
-                </tr>
-                <tr>
-                    <td>Python</td>
-                    <td class="intermediate">Intermediate</td>
-                </tr>
-                <tr>
-                    <td>Java</td>
-                    <td class="intermediate">Intermediate</td>
-                </tr>
-                <tr>
-                    <td>C (Programing language)</td>
-                    <td class="basics">Basics</td>
-                </tr>
-                <tr>
-                    <td>Hardware</td>
-                    <td class="intermediate">Intermediate</td>
-                </tr>
-                <tr>
-                    <td>Web Development (HTML, CSS, PHP)</td>
-                    <td class="intermediate">Intermediate</td>
-                </tr>
-            </table>
-        </p>
-      </div>
-    </div>
-  <div class="main" id="it_stuff">
-    <div class="d3" id="proxmox">
-        <hr>
-        <h1>Homelab with</h1>
-        <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview" target="_blank">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewsletter.proxmox.com%2Fuploads%2FProxmox-logo-white-orange-800_1.png&f=1&nofb=1&ipt=bc5f8482b56941cd3f5d90875fd3ed955ef677d16ddc2ff762973762dc8b9144" style="width: 90%; height: 90%;">
-        </a>
-        <hr><br>
-        <h2>About device I have used</h2>
-        <p>
-            I installed <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview" target="_blank">Proxmox VE 8.4</a> on my unused desktop PC. It's an HP M01-F1003nc equipped with an Intel Core i5-10400F (Comet Lake, 4.3 GHz), NVIDIA GeForce GTX 1650 Super (4 GB), 8 GB DDR4 RAM, and a 512 GB SSD. The installation process was challenging due to HP's limited Linux compatibility. I had to modify the boot parameters to get the installer running and manually install the bootloader in rescue mode to complete the setup.
-        </p>
-        <p>
-            Now I run two LXC containers, <a href="#twingate">Twingate</a> connector and <a href="#adguard_dns">AdGuard Home</a>. Additionally, I have several virtual machines such as <a href="https://www.truenas.com/" target="_blank">TrueNAS Scale</a> server for network-attached storage or Parrot security for pentesting.
-        </p>
-        <h2>Cybersecurity homelab</h2>
-        <p>
-            I have set up a <a href="https://www.parrotsec.org/" target="_blank">Parrot security</a> Linux virtual machine on a Proxmox VE hypervisor, that comes preinstalled with plenty of penetration testing tools, alongside VMs running Windows 10, <a href="https://www.linuxmint.com/" target="_blank">Linux Mint</a> hosting <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank">Apache2</a> website and <a href="https://fedoraproject.org/" target="_blank">Fedora Server</a>, which I currently don't have a specific use case for. Over the next few weeks, I intend to configure various vulnerabilities and insecure settings within these guest systems to create a controlled lab environment for practicing exploitation techniques and testing offensive security tools. I have alredy done autorun script for reverse shell using netcat Linux to Linux but I want to do something more complex next time.
-        </p>
-        <h2>BSD</h2>
-        <p>
-            I wanted to get more experience with <a href="https://en.wikipedia.org/wiki/List_of_BSD_operating_systems" target="_blank">BSD</a> and other real UNIX-based operating systems, not just <a href="https://en.wikipedia.org/wiki/Unix-like" target="_blank">UNIX-like</a> ones such as distributions of Linux. I'm curious about how BSD works differently, especially in areas like system structure, networking, and security. Later, I plan to try using FreeBSD for running lightweight servers, testing network services, and learning more about how things work behind the scenes compared to Linux.
-        </p>
-        <p>
-            I haven't done much with it yet because of time limitations, but I plan to explore it more in the future.
-        </p>
-    </div>
-    <div class="d3" id="linux">
-        <hr>
-        <h1>My linux and hardware journey</h1>
-        <hr><br>
-        <img src="images/thinkpad_deb.jpg" alt="Lenovo ThinkPad Debian" class="img_right">
-        <p>My experience with Linux is quite broad. I have worked with <a href="https://www.debian.org/" target="_blank">Debian</a>-based distributions such as <a href="https://ubuntu.com/" target="_blank">Ubuntu</a> (both desktop and server) and <a href="https://linuxmint.com/" target="_blank">Linux Mint</a>, as well as <a href="https://archlinux.org/" target="_blank">Arch Linux</a>.</p>
-        <p>I am experienced in using <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH</a> for remote management and performing server maintenance. Additionally, I have used various system monitoring tools, including <a href="https://nicolargo.github.io/glances/" target="_blank">Glances</a>, <a href="https://en.wikipedia.org/wiki/Top_(software)" target="_blank">top</a>, and <a href="https://htop.dev/" target="_blank">htop</a>.</p>
-        <p>I've been working on my laptops since 2022. Now I daily drive <a href="https://www.debian.org/" target="_blank">Debian</a> on a <a href="https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadt/thinkpad-t480s/22tp2tt480s" target="_blank">Lenovo ThinkPad T480s</a> witch I own since december 2024. Before Debian I used <a href="https://archlinux.org/" target="_blank">Arch Linux</a> with <a href="https://kde.org/plasma-desktop/" target="_blank">KDE Plasma</a> and then <a href="https://hyprland.org/" target="_blank">Hyprland</a>. Since I started exploring Linux distributions and upgrading my laptops, I've swapped the battery and installed the <a href="https://linuxmint.com/" target="_blank">Linux Mint</a> distribution on a Toshiba laptop. I plan to upgrade the RAM on both laptops and replace the fan on the Toshiba because it's a bit worn out. I love working on all my laptops because it allows me to learn more about hardware and different Linux distributions.</p>
-        <h2>My Laptops and Linux Distributions I've Worked With</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Laptop/PC</th>
-                    <th>Linux Distribution</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Lenovo ThinkPad T480s</td>
-                    <td>
-                        <div>Arch (KDE, Hyprland)</div>
-                        <div>Debian (GNOME)</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Toshiba Portege Z830</td>
-                    <td>
-                        <div>Linux Mint (Cinnamon, Xfce)</div>
-                        <div>Fedora Workstation (GNOME)</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Asus X51R</td>
-                    <td>
-                        <div>Fedora Workstation (GNOME)</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Proxmox VM (HP M01-F1003nc)</td>
-                    <td>
-                        <div>Ubuntu server (Terminal)</div>
-                        <div>Fedora sevrer (Web UI, Terminal)</div>
-                        <div>TrueNAS scale (Web UI, Terminal)</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="d3" id="adguard_dns">
-        <hr>
-        <h1>Self-hosted DNS server</h1>
-        <hr><br>
-        <img src="https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/doc/adguard_home_darkmode.svg" class="img_right" alt="AdGuard logo" style="border: none;">
-        <p>I self-hosted <a href="https://adguard.com/en/adguard-home/overview.html" target="_blank">AdGuard Home</a> to block ads and protect my devices from threats. It filters malicious domains, improves privacy, and keeps my whole network safer—without depending on third-party DNS services.</p>
-        <img src="images/adguard_blaocklist.png" class="img_left" alt="my blocklist">
-        <p>I chose <a href="https://adguard.com/en/adguard-home/overview.html" target="_blank">AdGuard Home</a> because it offers a clean and intuitive web interface, which makes it easy to manage and configure. Its simplicity was an important factor, as I wanted a reliable <a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="_blank">DNS</a> solution without unnecessary complexity. I set up custom <a href="https://en.wikipedia.org/wiki/Domain_Name_System#Recursive_and_caching_resolvers" target="_blank">upstream DNS servers</a> to ensure fast and secure domain resolution. In addition, I enabled several <a href="https://oisd.nl/" target="_blank">DNS blocklists</a> to actively block <a href="https://en.wikipedia.org/wiki/Online_advertising" target="_blank">ads</a>, <a href="https://en.wikipedia.org/wiki/Phishing" target="_blank">phishing</a> attempts, <a href="https://en.wikipedia.org/wiki/Online_tracking" target="_blank">tracking services</a>, and other <a href="https://en.wikipedia.org/wiki/Malware" target="_blank">malicious websites</a>. This helps protect all devices on my network while improving browsing speed and privacy.</p>
-    </div>
-    <div class="d3" id="zabbix">
-        <hr>
-        <h1>Network monitoring with</h1>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Zabbix_logo.png" style="width: 55%; height: 55%;" alt="Zabbix logo">
-        <hr><br>
-        <p>I set up <a href="https://www.zabbix.com/" target="_blank">Zabbix</a> to monitor my home network and servers. It provides real-time insights into system performance.</p>
-        <p>With Zabbix, I can track key metrics such as CPU load, memory usage, disk space, and network traffic across all my devices. The customizable dashboards give me a clear overview. Overall, Zabbix has been an invaluable tool for maintaining the reliability and efficiency of my home network.</p>
-    </div>
-    <div class="d3" id="twingate">
-        <hr>
-        <br>
-        <a href="https://www.twingate.com/" target="_blank">
-            <img src="https://storage.googleapis.com/afs-prod/media/5ab8d13687ffa4f650a97a7ffc4ffb7c/1713.jpeg" style="width: 90%; height: 90%; filter: invert(100%); background-color: white;" alt="Twingate logo">
-        </a>
-        <h1>TLS tunnel to local network</h1>
-        <hr><br>
-        <img src="images/twingate.png" class="img_left" alt="twingate_homepage">
-        <p><a href="https://www.twingate.com/" target="_blank">Twingate</a> is a modern, secure remote access solution that replaces traditional <a href="https://en.wikipedia.org/wiki/Virtual_private_network" target="_blank">VPNs</a>. It allows users to safely connect to private resources (like internal servers, apps, or databases) without exposing the entire network. Twingate uses a <a href="https://en.wikipedia.org/wiki/Zero_trust_security_model" target="_blank">zero-trust</a> approach, meaning each user or device only gets access to exactly what they need—nothing more.</p>
-        <img src="images/twingate_groups.png" class="img_right" alt="twingate groups">
-        <p>To enable secure remote access with Twingate, I set up a dedicated virtual machine on my <a href="https://www.proxmox.com/en/proxmox-virtual-environment/overview" target="_blank">Proxmox</a> server. This VM runs a <a href="https://www.docker.com/" target="_blank">Docker</a> container with Twingate’s Connector, which serves as a secure gateway between Twingate and my private network.</p>
-        <img src="images/twingate_network.png" class="img_left" alt="twingate devices">
-        <p>After creating the VM, I installed Docker and deployed the Twingate Connector using the configuration provided in the Twingate admin panel. The setup was simple and efficient: I registered the Connector to my Twingate network, copied the auto-generated Docker run command, and launched the container. Once running, the Connector established a secure, encrypted connection to Twingate’s cloud. This allows authorized users to securely access my <a href="https://www.truenas.com/" target="_blank">TrueNAS</a> server on ports 137-139 and <a href="https://en.wikipedia.org/wiki/Server_Message_Block" target="_blank">445</a> (SMB), while I, as the administrator, can manage internal services like the <a href="https://adguard.com/en/adguard-home/overview.html" target="_blank">AdGuard Home</a>, TrueNAS, and Proxmox web interfaces—without exposing any part of the local network to the public internet.</p>
-    </div>
-    <div class="d3" id="atari">
-        <hr>
-        <h1>Atari 130XE and BASIC programming language</h1>
-        <hr><br>
-        <img src="images/atari.png" class="img_right" alt="atari 130XE png" style="border: none;">
-        <p>I recently got an old <a href="https://en.wikipedia.org/wiki/Atari_8-bit_computers#XE_series">Atari 130XE</a> from my dad’s uncle, along with some game tapes, a tape recorder, and two joysticks. I haven't played any games because I couldn't get them running. The tape recorder probably needs the playback head cleaned.</p>
-        <img src="images/atari_code.gif" class="img_left" alt="me infront of atari">
-        <p>Anyway, I was excited to try programming on it. In just half an hour, I wrote my own <a href="https://en.wikipedia.org/wiki/BASIC" target="_blank">BASIC</a> program that displays my name inside a flashing box. I really enjoy working with retro 8-bit computers — it’s a fun experience!</p>
-    </div>
-    <div class="d3" id="tails">
-        <hr>
-        <h1>Exploration of</h1>
-        <a href="https://tails.net/" target="_blank">
-            <img src="https://tails.net/lib/logo.svg" alt="Tails OS logo">
-        </a>
-        <hr><br>
-        <p><a href="https://tails.net/">Tails</a> (The Amnesic Incognito Live System) is a security-focused, <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based" target="_blank">Debian-based</a> Linux distribution designed to protect privacy and anonymity. I discovered it while researching privacy-centric Linux systems. Tails runs entirely from a USB stick or DVD, using the computer’s RAM and leaving no trace on the host system by default, making it ideal for anonymous browsing and secure work.</p>
-        <p> One of Tails’ core features is the integration of the Tor network. The operating system includes the Tor Browser, which anonymizes internet traffic by routing it through a volunteer overlay network of at least three different relays. This makes it significantly harder to trace your IP address or physical location.</p>
-        <p>Tails also features “amnesia,” which means it doesn’t retain any data between sessions unless you explicitly choose to. However, it supports an optional encrypted persistent storage. This allows you to save specific files, system settings, additional software, and personal data securely on the USB drive, accessible only with a passphrase during startup.</p>
-        <p>In my personal setup, I’ve enabled persistent storage to install and explore various penetration testing, social engineering, and cybersecurity tools. Tails provides a safe, isolated environment for learning about digital privacy, anonymity, and ethical hacking practices without compromising the host machine.</p>
-    </div>
-    <div class="d3" id="web_server">
-        <hr>
-        <h1>Linux web server</h1>
-        <hr><br>
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.zimaboard.com%2Fimg%2Fproduct_1.png&f=1&nofb=1&ipt=d31e6766d7fa2e5db31faf4afead993eb6da358e1cd4acf71cde33d59cdc3d2b" style="float: right; margin: 15px; width: 40%; height: 40%;" alt="ZimaBoard">
-        <p>The project was part of my maturita exam. It focused on the installation and configuration of a Linux server for hosting a website. A <a href="https://www.zimaboard.com/application/home_server" target="_blank">ZimaBoard</a>, a compact computer, was used to enable efficient deployment of website. The project included setup of Apache2, remote access via <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH</a>, securing the server using the UFW firewall, and the use of PHPMailer for sending encrypted emails.</p>
-        <p>The goal of the project was to set up a web server on Linux machine and create a simple website with PHP as backend. This project focused on a physical server, which allowed for a deeper understanding of hardware, server administration and network management. Compared to regular web hosting, this project provided greater control over configuration and security.</p>
-        <a href="https://github.com/DandyTheWood/CV-Website" target="_blank"><button class="gh-button">Link to project on GitHub</button></a>
-    </div>
-</div>
 
-<div class="main" id="photography">
-    <div class="d3">
-        <h1>Photography Gallery</h1>
-        <hr>
+                    <hr><br>
 
-        <!-- Girl in Rain Section -->
-        <h2 id="girl">Girl in Rain</h2>
-        <div class="gallery-grid">
-            <a href="images/Galery/big/girl_rainy_day_4.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/girl_rainy_day_4.jpg" alt="Girl Rainy Day 1" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/girl_rainy_day_3.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/girl_rainy_day_3.jpg" alt="Girl Rainy Day 2" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/girl_rainy_day_1.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/girl_rainy_day_1.jpg" alt="Girl Rainy Day 3" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/girl_rainy_day_2.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/girl_rainy_day_2.jpg" alt="Girl Rainy Day 4" loading="lazy">
-                </div>
-            </a>
-        </div>
+                    <p>
+                        <a href="https://tails.net/" target="_blank" rel="noopener">Tails</a> (The Amnesic Incognito Live System) is a security-focused, <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based" target="_blank" rel="noopener">Debian-based</a> Linux distribution designed to protect privacy and anonymity.
+                    </p>
 
-        <!-- Autumn Portraits Section -->
-        <h2 id="autumn_portraits">Autumn Portraits</h2>
-        <div class="gallery-grid">
-            <a href="images/Galery/big/autumn_portrait_1.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/autumn_portrait_1.jpg" alt="Autumn Portrait 1" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/autumn_portrait_2.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/autumn_portrait_2.jpg" alt="Autumn Portrait 2" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/autumn_portrait_3.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/autumn_portrait_3.jpg" alt="Autumn Portrait 3" loading="lazy">
-                </div>
-            </a>
-        </div>
+                    <p>
+                        I discovered Tails while researching privacy-focused Linux systems. It runs entirely from a USB drive or DVD and primarily uses the computer's RAM, leaving no trace on the host system by default. This makes it useful for privacy-conscious browsing and other activities where minimizing local traces is important.
+                    </p>
 
-        <!-- Croatia Section -->
-        <h2 id="croatia">Croatia</h2>
-        <div class="gallery-grid">
-            <a href="images/Galery/big/croatia_house.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/croatia_house.jpg" alt="Croatia House" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/croatia_port_ship.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/croatia_port_ship.jpg" alt="Croatia Port Ship" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/croatia_boat_sea.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/croatia_boat_sea.jpg" alt="Croatia Boat Sea" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/croatia_house_old.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/croatia_house_old.jpg" alt="Croatia Old House" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/croatia_port.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/croatia_port.jpg" alt="Croatia Port" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/coroatia_panorama.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/coroatia_panorama.jpg" alt="Croatia Panorama" loading="lazy">
-                </div>
-            </a>
-        </div>
+                    <p>
+                        One of Tails' core features is its integration with the Tor network. The operating system includes the Tor Browser, which anonymizes internet traffic by routing it through a volunteer-operated network of relays. This makes it significantly more difficult for websites and other observers to determine your original IP address.
+                    </p>
 
-        <!-- Scotland Section -->
-        <h2 id="scotland">Scotland</h2>
-        <div class="gallery-grid">
-            <a href="images/Galery/big/scotland_oil_tower.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/scotland_oil_tower.jpg" alt="Scotland Oil Tower" loading="lazy">
+                    <p>
+                        Tails also provides an "amnesic" environment, meaning that data is not normally retained between sessions unless you explicitly choose to save it. However, Tails supports optional encrypted persistent storage.
+                    </p>
+
+                    <p>
+                        Persistent storage allows you to securely save selected files, system settings, additional software, and personal data on the USB drive. The storage is protected and can only be accessed after entering the appropriate passphrase during startup.
+                    </p>
+
+                    <p>
+                        In my personal setup, I have enabled persistent storage to install and explore various penetration testing, social engineering, and cybersecurity tools. Tails provides an isolated environment for learning about digital privacy, anonymity, and ethical security practices without modifying the host operating system.
+                    </p>
                 </div>
-            </a>
-            <a href="images/Galery/big/scotland_sea_women.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/scotland_sea_women.jpg" alt="Scotland Sea Women" loading="lazy">
+
+                <div class="d3" id="web_server">
+                    <hr>
+                    <h1>Linux Web Server</h1>
+                    <hr><br>
+
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.zimaboard.com%2Fimg%2Fproduct_1.png&f=1&nofb=1&ipt=d31e6766d7fa2e5db31faf4afead993eb6da358e1cd4acf71cde33d59cdc3d2b" style="float: right; margin: 15px; width: 40%; height: 40%;" alt="ZimaBoard">
+
+                    <p>
+                        This project was part of my maturita exam. It focused on installing and configuring a Linux server for hosting a website. I used a <a href="https://www.zimaboard.com/application/home_server" target="_blank" rel="noopener">ZimaBoard</a>, a compact single-board computer designed for various server and home-lab applications.
+                    </p>
+
+                    <p>
+                        The project included installing and configuring Apache2, setting up remote access through <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank" rel="noopener">SSH</a>, securing the server with the UFW firewall, and using PHPMailer to send emails securely.
+                    </p>
+
+                    <p>
+                        The main goal was to configure a Linux web server and create a simple website using PHP as the backend. Working with a physical server gave me a better understanding of hardware, server administration, networking, and system security.
+                    </p>
+
+                    <p>
+                        Compared to conventional web hosting, running my own physical server gave me much greater control over the system's configuration and security.
+                    </p>
+
+                    <a href="https://github.com/DandyTheWood/CV-Website" target="_blank" rel="noopener">
+                        <button class="gh-button">View Project on GitHub</button>
+                    </a>
                 </div>
-            </a>
-            <a href="images/Galery/big/scotland_stairs.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/scotland_stairs.jpg" alt="Scotland Stairs" loading="lazy">
+            </section>
+
+            <section class="main" id="photography">
+                <div class="d3">
+                    <h1>Photography Gallery</h1>
+                    <hr>
+
+                    <!-- Girl in Rain Section -->
+                    <h2 id="girl">Girl in Rain</h2>
+                    <div class="gallery-grid">
+                        <a href="images/Galery/big/girl_rainy_day_4.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/girl_rainy_day_4.jpg" alt="Girl in the Rain 1" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/girl_rainy_day_3.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/girl_rainy_day_3.jpg" alt="Girl in the Rain 2" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/girl_rainy_day_1.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/girl_rainy_day_1.jpg" alt="Girl in the Rain 3" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/girl_rainy_day_2.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/girl_rainy_day_2.jpg" alt="Girl in the Rain 4" loading="lazy">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Autumn Portraits Section -->
+                    <h2 id="autumn_portraits">Autumn Portraits</h2>
+                    <div class="gallery-grid">
+                        <a href="images/Galery/big/autumn_portrait_1.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/autumn_portrait_1.jpg" alt="Autumn Portrait 1" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/autumn_portrait_2.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/autumn_portrait_2.jpg" alt="Autumn Portrait 2" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/autumn_portrait_3.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/autumn_portrait_3.jpg" alt="Autumn Portrait 3" loading="lazy">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Croatia Section -->
+                    <h2 id="croatia">Croatia</h2>
+                    <div class="gallery-grid">
+                        <a href="images/Galery/big/croatia_house.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/croatia_house.jpg" alt="Croatia House" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/croatia_port_ship.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/croatia_port_ship.jpg" alt="Croatia Port Ship" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/croatia_boat_sea.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/croatia_boat_sea.jpg" alt="Croatia Boat at Sea" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/croatia_house_old.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/croatia_house_old.jpg" alt="Croatia Old House" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/croatia_port.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/croatia_port.jpg" alt="Croatia Port" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/coroatia_panorama.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/coroatia_panorama.jpg" alt="Croatia Panorama" loading="lazy">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Scotland Section -->
+                    <h2 id="scotland">Scotland</h2>
+                    <div class="gallery-grid">
+                        <a href="images/Galery/big/scotland_oil_tower.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/scotland_oil_tower.jpg" alt="Scotland Oil Tower" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/scotland_sea_women.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/scotland_sea_women.jpg" alt="Women by the Sea in Scotland" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/scotland_stairs.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/scotland_stairs.jpg" alt="Scotland Stairs" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/scotland_street.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/scotland_street.jpg" alt="Scotland Street" loading="lazy">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Trnava Section -->
+                    <h2 id="trnava">Trnava</h2>
+                    <div class="gallery-grid">
+                        <a href="images/Galery/big/trnava_train_station.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/trnava_train_station.jpg" alt="Trnava Train Station" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/trnava_bookshop.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/trnava_bookshop.jpg" alt="Trnava Bookshop" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/trnava_street_3.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/trnava_street_3.jpg" alt="Trnava Street 1" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/trnava_street_2.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/trnava_street_2.jpg" alt="Trnava Street 2" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/trnava_street_1.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/trnava_street_1.jpg" alt="Trnava Street 3" loading="lazy">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product Photography Section -->
+                    <h2 id="products">Product Photography</h2>
+                    <div class="gallery-grid">
+                        <a href="images/Galery/big/iphone_smoke.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/iphone_smoke.jpg" alt="iPhone Smoke" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/nokia.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/nokia.jpg" alt="Nokia Phone" loading="lazy">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Other Section -->
+                    <h2 id="other">Other</h2>
+                    <div class="gallery-grid">
+                        <a href="images/Galery/big/handlova_railway.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/handlova_railway.jpg" alt="Handlová Railway" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/inspecting_food.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/inspecting_food.jpg" alt="Inspecting Food" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/paper_hats.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/paper_hats.jpg" alt="Paper Hats" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/photographer_with_camera.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/photographer_with_camera.jpg" alt="Photographer with Camera" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/pidgeon_on_statue.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/pidgeon_on_statue.jpg" alt="Pigeon on Statue" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/rainy_day_market.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/rainy_day_market.jpg" alt="Rainy Day Market" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/drummer_high-hat.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/drummer_high-hat.jpg" alt="Drummer High-Hat" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/falconeer_firecross.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/falconeer_firecross.jpg" alt="Falconer Firecross" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/back_of_man.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/back_of_man.jpg" alt="Back of a Man" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="images/Galery/big/bmw_carwash.jpg" class="gallery-link">
+                            <div class="image-wrapper">
+                                <img src="images/Galery/small/bmw_carwash.jpg" alt="BMW Car Wash" loading="lazy">
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </a>
-            <a href="images/Galery/big/scotland_street.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/scotland_street.jpg" alt="Scotland Street" loading="lazy">
-                </div>
-            </a>
+            </section>
+        </main>
+
+        <!-- Lightbox modal for gallery images -->
+        <div id="lightbox" class="lightbox">
+            <button class="lightbox-close" aria-label="Close">&times;</button>
+
+            <div class="lightbox-container">
+                <img class="lightbox-image" src="" alt="Gallery Image">
+            </div>
+
+            <h2 class="lightbox-title">
+                <span class="lightbox-prev">&#10094;</span>
+                <span class="lightbox-text"></span>
+                <span class="lightbox-next">&#10095;</span>
+            </h2>
         </div>
 
-        <!-- Trnava Section -->
-        <h2 id="trnava">Trnava</h2>
-        <div class="gallery-grid">
-            <a href="images/Galery/big/trnava_train_station.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/trnava_train_station.jpg" alt="Trnava Train Station" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/trnava_bookshop.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/trnava_bookshop.jpg" alt="Trnava Bookshop" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/trnava_street_3.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/trnava_street_3.jpg" alt="Trnava Street 1" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/trnava_street_2.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/trnava_street_2.jpg" alt="Trnava Street 2" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/trnava_street_1.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/trnava_street_1.jpg" alt="Trnava Street 3" loading="lazy">
-                </div>
-            </a>
-        </div>
-
-        <!-- Product Photography Section -->
-        <h2 id="products">Product Photography</h2>
-        <div class="gallery-grid">
-            <a href="images/Galery/big/iphone_smoke.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/iphone_smoke.jpg" alt="iPhone Smoke" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/nokia.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/nokia.jpg" alt="Nokia" loading="lazy">
-                </div>
-            </a>
-        </div>
-
-        <!-- Other Section -->
-        <h2 id="other">Other</h2>
-        <div class="gallery-grid">
-            <a href="images/Galery/big/handlova_railway.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/handlova_railway.jpg" alt="Handlova Railway" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/inspecting_food.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/inspecting_food.jpg" alt="Inspecting Food" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/paper_hats.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/paper_hats.jpg" alt="Paper Hats" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/photographer_with_camera.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/photographer_with_camera.jpg" alt="Photographer with Camera" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/pidgeon_on_statue.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/pidgeon_on_statue.jpg" alt="Pidgeon on Statue" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/rainy_day_market.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/rainy_day_market.jpg" alt="Rainy Day Market" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/drummer_high-hat.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/drummer_high-hat.jpg" alt="Drummer High-Hat" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/falconeer_firecross.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/falconeer_firecross.jpg" alt="Falconer Firecross" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/back_of_man.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/back_of_man.jpg" alt="Back of Man" loading="lazy">
-                </div>
-            </a>
-            <a href="images/Galery/big/bmw_carwash.jpg" class="gallery-link">
-                <div class="image-wrapper">
-                    <img src="images/Galery/small/bmw_carwash.jpg" alt="BMW Carwash" loading="lazy">
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Lightbox modal for gallery images -->
-<div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <div class="lightbox-container">
-        <img class="lightbox-image" src="" alt="Gallery Image">
-    </div>
-    <h2 class="lightbox-title">
-        <span class="lightbox-prev">&#10094;</span>
-        <span class="lightbox-text"></span>
-        <span class="lightbox-next">&#10095;</span>
-    </h2>
-</div>
-<script>
-    window.addEventListener("load", () => {
-    const overlay = document.getElementById("loader-overlay");
-    setTimeout(() => {
-        overlay.classList.add("hidden");
-    }, 2500);
-    });
-</script>
-
-<script>
-    // Gallery lightbox functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.querySelector('.lightbox-image');
-        const lightboxText = document.querySelector('.lightbox-text');
-        const closeBtn = document.querySelector('.lightbox-close');
-        const prevBtn = document.querySelector('.lightbox-prev');
-        const nextBtn = document.querySelector('.lightbox-next');
-        const galleryLinks = document.querySelectorAll('.gallery-link');
-
-        let currentIndex = 0;
-        const imageUrls = Array.from(galleryLinks).map(link => link.getAttribute('href'));
-        const imageAltTexts = Array.from(galleryLinks).map(link =>
-            link.querySelector('img').getAttribute('alt')
-        );
-
-        function openLightbox(index) {
-            if (imageUrls.length === 0) return;
-            currentIndex = Math.max(0, Math.min(index, imageUrls.length - 1));
-            lightboxImage.src = imageUrls[currentIndex];
-            lightboxText.textContent = imageAltTexts[currentIndex];
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function showPrev() {
-            currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
-            lightboxImage.src = imageUrls[currentIndex];
-            lightboxText.textContent = imageAltTexts[currentIndex];
-        }
-
-        function showNext() {
-            currentIndex = (currentIndex + 1) % imageUrls.length;
-            lightboxImage.src = imageUrls[currentIndex];
-            lightboxText.textContent = imageAltTexts[currentIndex];
-        }
-
-        // Add click event listeners to all gallery links
-        galleryLinks.forEach((link, index) => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                openLightbox(index);
-            });
-        });
-
-        // Close button
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeLightbox);
-        }
-
-        // Navigation buttons
-        if (prevBtn) {
-            prevBtn.addEventListener('click', showPrev);
-        }
-        if (nextBtn) {
-            nextBtn.addEventListener('click', showNext);
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (!lightbox.classList.contains('active')) return;
-
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showPrev();
-            if (e.key === 'ArrowRight') showNext();
-        });
-
-        // Close on background click
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) closeLightbox();
-        });
-    });
-</script>
-<footer>
-    <p style="text-align: center;">
-        Created by Daniel Molda 2024<br>
-        Last updated on <span id="current-date">27.06.2026</span><br>
-        email: <a href="mailto:danielmolda1@gmail.com">danielmolda1@gmail.com</a><br>
-        View my CV <a href="zivotopis-dmolda.pdf" target="_blank">here</a>
-    </p>
-</footer>
-</body>
-
+        <footer>
+            <p style="text-align: center;">
+                Created by Daniel Molda 2024<br>
+                Last updated on <span id="current-date">13.08.2026</span><br>
+                Email: <a href="mailto:danielmolda1@gmail.com">danielmolda1@gmail.com</a><br>
+                View my CV <a href="zivotopis-dmolda.pdf" target="_blank" rel="noopener">here</a>
+            </p>
+        </footer>
+    </body>
 </html>

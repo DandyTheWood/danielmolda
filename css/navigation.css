@@ -54,73 +54,117 @@ nav {
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
-.dropdown-button:hover {
-    background-color: var(--accent-cyan-opaque);
-    color: var(--button-text-on-accent);
-    transform: scale(1.1);
-}
-
 .dropdown-content {
-    display: none;
     position: absolute;
     background-color: var(--nav-bg);
-    min-width: 150px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    border-radius: 5px;
-    width: 100%;
+    min-width: 180px;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.6);
+    z-index: 50;
+    border-radius: 8px;
+    width: max-content;
     right: 0;
+    padding: 8px 6px;
+    transform-origin: top right;
+    transform: translateY(-6px) scale(0.98);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 240ms cubic-bezier(.2,.9,.2,1), transform 240ms cubic-bezier(.2,.9,.2,1), visibility 240ms;
 }
 
 .dropdown-content a {
     color: var(--accent-cyan);
-    padding: 10px;
+    padding: 8px 12px;
     text-decoration: none;
     display: block;
     text-align: left;
-    border-bottom: 1px solid var(--accent-cyan);
+    border-radius: 4px;
+    margin: 2px 0;
+    font-weight: 500;
 }
 
 .dropdown-content a:last-child {
-    border-bottom: none;
+    margin-bottom: 2px;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:focus-visible {
     background-color: var(--accent-cyan-opaque);
+    color: var(--button-text-on-accent);
+    outline: none;
+}
+
+/* show dropdown when JavaScript toggles the 'open' class - animated */
+.dropdown.open .dropdown-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Invert colors when dropdown is opened (click/JS-controlled) */
+.dropdown.open .dropdown-button {
+    background-color: var(--accent-cyan);
+    color: var(--button-text-on-accent);
+    transform: scale(1.05);
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6), 0 0 10px var(--accent-cyan);
+}
+
+/* Invert nested parent when opened */
+.nested-dropdown.open > a {
+    background-color: var(--accent-cyan);
+    color: var(--button-text-on-accent);
+    border-radius: 4px;
+}
+
+/* Make the parent arrow match the inverted colors when open */
+.nested-dropdown.open > a::after {
     color: var(--button-text-on-accent);
 }
 
-.dropdown:hover .dropdown-content {
+/* nested dropdown open via JS */
+.nested-dropdown.open .nested-dropdown-content {
     display: block;
 }
+
 
 .nested-dropdown {
     position: relative;
 }
 
 .nested-dropdown-content {
-    display: none;
     position: absolute;
     right: 100%;
     top: 0;
-    margin-top: 1px;
-    background-color: rgba(0, 0, 0, 0.9);
-    min-width: 150px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    border-radius: 1px;
-    border-right: 1px solid var(--accent-cyan);
+    margin-top: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    min-width: 160px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+    z-index: 60;
+    border-radius: 6px;
+    border-right: 1px solid rgba(255,255,255,0.02);
+    padding: 6px 4px;
+    transform-origin: left top;
+    transform: translateX(6px) scale(0.98);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 220ms ease, transform 220ms ease, visibility 220ms;
 }
 
-.nested-dropdown:hover .nested-dropdown-content {
-    display: block;
+.nested-dropdown.open .nested-dropdown-content {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .nested-dropdown > a::after {
-    content: " ◀";
+    content: "◀";
     float: right;
     color: var(--accent-cyan);
-    font-size: 0.8em;
+    font-size: 0.9em;
+    margin-left: 8px;
 }
 
 .nested-dropdown-content a {
@@ -137,7 +181,7 @@ nav {
     border-bottom: none;
 }
 
-.nested-dropdown-content a:hover {
+.nested-dropdown-content a:focus-visible {
     background-color: var(--accent-cyan-opaque);
     color: var(--button-text-on-accent);
 }
@@ -148,4 +192,93 @@ footer {
     padding: 1.5% 5%;
     background-color: var(--footer-bg);
     z-index: 10;
+}
+
+/* Hamburger (mobile) styles */
+.hamburger {
+    position: fixed;
+    z-index: 200;
+    top: 1rem;
+    right: 1rem;
+    padding: 8px 10px;
+    background: rgba(0,0,0,0.6);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger .closeIcon { display: none; }
+.hamburger[aria-expanded="true"] .menuIcon { display: none; }
+.hamburger[aria-expanded="true"] .closeIcon { display: inline; }
+
+/* Invert hamburger when menu open */
+.hamburger[aria-expanded="true"] {
+    background-color: var(--accent-cyan);
+    color: var(--button-text-on-accent);
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6), 0 0 10px var(--accent-cyan);
+}
+
+.menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 190;
+    background: rgba(0,0,0,0.96);
+    color: white;
+    list-style: none;
+    padding-top: 5.25rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu.showMenu { transform: translateY(0); }
+
+.menu .menuItem {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+}
+
+/* Invert colors for menu items when mobile menu is shown */
+.menu.showMenu .menuItem {
+    background-color: var(--accent-cyan);
+    color: var(--button-text-on-accent);
+    border-radius: 6px;
+    padding: 12px 24px;
+}
+
+/* Active item highlighting removed — return to click-only visuals */
+
+/* Remove has-active visual markers */
+
+.menu .menuItem:focus { color: var(--button-text-on-accent); }
+
+.menu .sub { display: none; list-style: none; padding-left: 0; }
+
+@media (min-width: 801px) {
+    /* hide hamburger and full-screen menu on wider screens */
+    .hamburger { display: none; }
+    .menu { display: none; }
+}
+
+/* On small screens keep desktop dropdown hidden only if explicitly needed; JavaScript will control visibility via .open */
+
+/* prevent body scroll while mobile menu open */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }

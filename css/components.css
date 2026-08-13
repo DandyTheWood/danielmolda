@@ -36,6 +36,8 @@
     align-items: center;
     animation: fly-in 1.5s ease-out;
     margin: 50px 0;
+    list-style: none; /* remove default list bullets */
+    padding: 0; /* remove default UL padding */
 }
 
 .socials .icon-content {
@@ -108,12 +110,24 @@
 }
 
 .socials .icon-content a[data-social="github"] .filled,
-.socials .icon-content a[data-social="github"] ~ .tooltip {
+.socials .icon-content[data-social="github"] .filled {
     background-color: var(--social-github-bg);
 }
 
+/* YouTube: support `data-social` on the anchor or the parent `.icon-content` */
+.socials .icon-content a[data-social="youtube"] .filled,
+.socials .icon-content a[data-social="youtube"] ~ .tooltip,
+.socials .icon-content[data-social="youtube"] .filled,
+.socials .icon-content[data-social="youtube"] .tooltip {
+    background-color: var(--social-youtube);
+    color: #fff;
+}
+
+/* Instagram: gradient fill, support `data-social` on anchor or parent */
 .socials .icon-content a[data-social="instagram"] .filled,
-.socials .icon-content a[data-social="instagram"] ~ .tooltip {
+.socials .icon-content a[data-social="instagram"] ~ .tooltip,
+.socials .icon-content[data-social="instagram"] .filled,
+.socials .icon-content[data-social="instagram"] .tooltip {
     background: linear-gradient(45deg,
         var(--instagram-stop-1),
         var(--instagram-stop-2),
@@ -121,11 +135,7 @@
         var(--instagram-stop-4),
         var(--instagram-stop-5),
         var(--instagram-stop-6));
-}
-
-.socials .icon-content a[data-social="youtube"] .filled,
-.socials .icon-content a[data-social="youtube"] ~ .tooltip {
-    background-color: var(--social-youtube);
+    color: #fff;
 }
 
 /* Buttons */
