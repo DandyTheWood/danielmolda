@@ -9,6 +9,190 @@
     width: 100%;
 }
 
+main > .main[hidden] {
+    display: none;
+}
+
+#it_stuff .project-card {
+    scroll-margin-top: 8rem;
+}
+
+@media (min-width: 1025px) {
+    #it_stuff {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+}
+
+#it_stuff .project-details {
+    --project-preview-height: 352px;
+    position: relative;
+    max-height: var(--project-preview-height);
+    overflow: hidden;
+    overflow-anchor: none;
+    transition: max-height 850ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#it_stuff .project-details::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 6rem;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.95));
+    content: "";
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 350ms ease-out;
+}
+
+#it_stuff .project-card.is-expanded .project-details {
+    max-height: none;
+}
+
+#it_stuff .project-card.is-expanded .project-details::after {
+    opacity: 0;
+}
+
+.project-content {
+    padding-bottom: 1rem;
+}
+
+.twingate-logo-link {
+    display: block !important;
+    width: 55%;
+    margin: 1rem auto;
+}
+
+.twingate-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto !important;
+    filter: invert(100%);
+    background-color: white;
+}
+
+.project-read-more {
+    --project-arrow-stroke: 6px;
+    --project-circle-stroke: 3.5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+    border: var(--project-circle-stroke) solid var(--accent-cyan);
+    border-radius: 50%;
+    background: var(--nav-bg);
+    color: var(--accent-cyan);
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.project-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 1.25rem;
+    transform: translate(-50%, calc(-50% + 2px));
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-arrow::before,
+.project-arrow::after {
+    position: absolute;
+    top: 50%;
+    width: 1.25rem;
+    height: var(--project-arrow-stroke);
+    border-radius: 999px;
+    background: currentColor;
+    content: "";
+}
+
+.project-arrow::before {
+    right: calc(50% - 3px);
+    transform: rotate(32deg);
+    transform-origin: right center;
+}
+
+.project-arrow::after {
+    left: calc(50% - 3px);
+    transform: rotate(-32deg);
+    transform-origin: left center;
+}
+
+#it_stuff .project-card.is-expanded .project-arrow {
+    transform: translate(-50%, calc(-50% - 2px)) rotate(180deg);
+}
+
+#it_stuff .project-card:not(.is-expanded) .project-read-more {
+    z-index: 1;
+    margin-top: -3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-read-more:hover,
+.project-read-more:focus-visible {
+    background: var(--accent-cyan);
+    color: var(--button-text-on-accent);
+    transform: translateY(2px);
+}
+
+.project-read-more:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #it_stuff .project-details,
+    #it_stuff .project-details::after,
+    .project-read-more,
+    .project-arrow {
+        transition: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-read-more {
+        --project-arrow-stroke: 4.5px;
+        --project-circle-stroke: 2.625px;
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .project-arrow {
+        width: 1.5rem;
+        height: 0.9375rem;
+        transform: translate(-50%, calc(-50% + 1.5px));
+    }
+
+    .project-arrow::before,
+    .project-arrow::after {
+        width: 0.9375rem;
+    }
+
+    .project-arrow::before {
+        right: calc(50% - 2.25px);
+    }
+
+    .project-arrow::after {
+        left: calc(50% - 2.25px);
+    }
+
+    #it_stuff .project-card.is-expanded .project-arrow {
+        transform: translate(-50%, calc(-50% - 1.5px)) rotate(180deg);
+    }
+
+    #it_stuff .project-card:not(.is-expanded) .project-read-more {
+        margin-top: -2.625rem;
+    }
+}
+
 .welcome {
     padding: 3%;
     border-radius: 2%;

@@ -2,6 +2,56 @@
    RESPONSIVE DESIGN - TABLET & DESKTOP (1024px)
    ============================================ */
 
+@media (max-width: 811px) {
+    .dropdown-content {
+        top: 100%;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .dropdown-content > a,
+    .dropdown-content > .nested-dropdown > a {
+        margin: 0;
+    }
+
+    .nested-dropdown-content {
+        position: static;
+        display: block;
+        width: calc(100% - 15px);
+        max-height: 0;
+        margin: 0 0 0 15px;
+        padding: 0 4px;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-right: none;
+        border-left: 0 solid transparent;
+        box-shadow: none;
+        transition: max-height 220ms ease, padding 220ms ease;
+    }
+
+    .nested-dropdown.open .nested-dropdown-content {
+        max-height: 800px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border-left: 2px solid var(--accent-cyan);
+    }
+
+    .nested-dropdown-content a {
+        margin: 1px 0;
+    }
+
+    .nested-dropdown > a::after {
+        margin-top: 0.4rem;
+        transform: rotate(45deg);
+    }
+
+    .nested-dropdown.open > a::after {
+        transform: rotate(225deg);
+    }
+}
+
 @media (max-width: 1024px) {
     .main {
         flex-direction: column;
@@ -226,37 +276,9 @@
         font-size: 0.9rem;
     }
 
-    .nested-dropdown-content {
-        position: static !important;
-        display: block;
-        max-height: 0;
-        overflow: hidden;
-        background-color: rgba(0,0,0,0.7);
-        border-right: none;
-        border-left: 2px solid var(--accent-cyan);
-        margin-left: 15px;
-        margin-top: 0px;
-        box-shadow: none;
-        width: calc(100% - 15px);
-        transition: max-height 220ms ease;
-    }
-
-    .nested-dropdown.open .nested-dropdown-content {
-        max-height: 800px; /* large enough to reveal contents */
-    }
-
     .nested-dropdown-content a {
         padding: 6px 10px;
         font-size: 0.85rem;
-    }
-
-    .nested-dropdown > a::after {
-        content: " ▼";
-        float: right;
-    }
-
-    .nested-dropdown.open > a::after {
-        content: " ▲";
     }
 
     /* Main layout */

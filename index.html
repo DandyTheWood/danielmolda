@@ -32,6 +32,7 @@
     <script src="scripts/loader.js" defer></script>
     <script src="scripts/image-lazy.js" defer></script>
     <script src="scripts/menu.js" defer></script>
+    <script src="scripts/section-navigation.js" defer></script>
     <script src="scripts/lightbox.js" defer></script>
 
     <body>
@@ -54,6 +55,14 @@
                 <a href="#index" class="dmolda_button">
                     <span class="actual-text">Daniel Molda</span>
                 </a>
+
+                <div class="desktop-navigation">
+                    <a href="#index">Home</a>
+                    <a href="#aboutme">About Me</a>
+                    <a href="#it_stuff">IT Projects</a>
+                    <a href="#photography">Photography</a>
+                    <a href="zivotopis-dmolda.pdf" target="_blank" rel="noopener">My CV</a>
+                </div>
 
                 <div class="dropdown">
                     <button class="dropdown-button">Menu</button>
@@ -207,13 +216,13 @@
             <section class="main" id="it_stuff">
                 <div class="d3" id="proxmox">
                     <hr>
-                    <h1>Homelab with</h1>
+                    <h1>Proxmox Homelab</h1>
 
                     <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview" target="_blank" rel="noopener">
                         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewsletter.proxmox.com%2Fuploads%2FProxmox-logo-white-orange-800_1.png&f=1&nofb=1&ipt=bc5f8482b56941cd3f5d90875fd3ed955ef677d16ddc2ff762973762dc8b9144" style="width: 90%; height: 90%;" alt="Proxmox logo">
                     </a>
 
-                    <hr><br>
+                    <hr>
 
                     <h2>About the Device I Use</h2>
 
@@ -253,7 +262,7 @@
                 <div class="d3" id="linux">
                     <hr>
                     <h1>My Linux and Hardware Journey</h1>
-                    <hr><br>
+                    <hr>
 
                     <img src="images/thinkpad_deb.jpg" alt="Lenovo ThinkPad running Debian" class="img_right">
 
@@ -322,7 +331,7 @@
                 <div class="d3" id="adguard_dns">
                     <hr>
                     <h1>Self-Hosted DNS Server</h1>
-                    <hr><br>
+                    <hr>
 
                     <img src="https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/doc/adguard_home_darkmode.svg" class="img_right" alt="AdGuard logo" style="border: none;">
 
@@ -347,11 +356,11 @@
 
                 <div class="d3" id="zabbix">
                     <hr>
-                    <h1>Network Monitoring with</h1>
+                    <h1>Network Monitoring with Zabbix</h1>
 
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Zabbix_logo.png" style="width: 55%; height: 55%;" alt="Zabbix logo">
 
-                    <hr><br>
+                    <hr>
 
                     <p>
                         I set up <a href="https://www.zabbix.com/" target="_blank" rel="noopener">Zabbix</a> to monitor my home network and servers. It provides real-time information about system performance and network activity.
@@ -368,14 +377,12 @@
 
                 <div class="d3" id="twingate">
                     <hr>
-                    <br>
-
-                    <a href="https://www.twingate.com/" target="_blank" rel="noopener">
-                        <img src="https://storage.googleapis.com/afs-prod/media/5ab8d13687ffa4f650a97a7ffc4ffb7c/1713.jpeg" style="width: 90%; height: 90%; filter: invert(100%); background-color: white;" alt="Twingate logo">
+                    <a href="https://www.twingate.com/" class="twingate-logo-link" target="_blank" rel="noopener">
+                        <img src="https://storage.googleapis.com/afs-prod/media/5ab8d13687ffa4f650a97a7ffc4ffb7c/1713.jpeg" class="twingate-logo" alt="Twingate logo">
                     </a>
+                    <hr>
 
                     <h1>Secure Tunnel to My Local Network</h1>
-                    <hr><br>
 
                     <img src="images/twingate.png" class="img_left" alt="Twingate homepage">
 
@@ -411,7 +418,7 @@
                 <div class="d3" id="atari">
                     <hr>
                     <h1>Atari 130XE and the BASIC Programming Language</h1>
-                    <hr><br>
+                    <hr>
 
                     <img src="images/atari.png" class="img_right" alt="Atari 130XE" style="border: none;">
 
@@ -432,13 +439,13 @@
 
                 <div class="d3" id="tails">
                     <hr>
-                    <h1>Exploration of</h1>
+                    <h1>Exploring Tails OS</h1>
 
                     <a href="https://tails.net/" target="_blank" rel="noopener">
                         <img src="https://tails.net/lib/logo.svg" alt="Tails OS logo">
                     </a>
 
-                    <hr><br>
+                    <hr>
 
                     <p>
                         <a href="https://tails.net/" target="_blank" rel="noopener">Tails</a> (The Amnesic Incognito Live System) is a security-focused, <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based" target="_blank" rel="noopener">Debian-based</a> Linux distribution designed to protect privacy and anonymity.
@@ -468,7 +475,7 @@
                 <div class="d3" id="web_server">
                     <hr>
                     <h1>Linux Web Server</h1>
-                    <hr><br>
+                    <hr>
 
                     <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.zimaboard.com%2Fimg%2Fproduct_1.png&f=1&nofb=1&ipt=d31e6766d7fa2e5db31faf4afead993eb6da358e1cd4acf71cde33d59cdc3d2b" style="float: right; margin: 15px; width: 40%; height: 40%;" alt="ZimaBoard">
 
@@ -725,7 +732,7 @@
         <footer>
             <p style="text-align: center;">
                 Created by Daniel Molda 2024<br>
-                Last updated on <span id="current-date">13.08.2026</span><br>
+                Last updated on <span id="current-date">01.10.2026</span><br>
                 Email: <a href="mailto:danielmolda1@gmail.com">danielmolda1@gmail.com</a><br>
                 View my CV <a href="zivotopis-dmolda.pdf" target="_blank" rel="noopener">here</a>
             </p>
