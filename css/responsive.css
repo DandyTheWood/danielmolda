@@ -2,7 +2,7 @@
    RESPONSIVE DESIGN - TABLET & DESKTOP (1024px)
    ============================================ */
 
-@media (max-width: 811px) {
+@media (max-width: 851px) {
     .dropdown-content {
         top: 100%;
         right: 0;

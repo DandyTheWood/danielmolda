@@ -234,7 +234,7 @@ footer {
     z-index: 10;
 }
 
-@media (max-width: 811px) {
+@media (max-width: 851px) {
     .desktop-navigation {
         display: none;
     }
@@ -319,7 +319,7 @@ footer {
 
 .menu .sub { display: none; list-style: none; padding-left: 0; }
 
-@media (min-width: 812px) {
+@media (min-width: 852px) {
     /* hide hamburger and full-screen menu on wider screens */
     .hamburger { display: none; }
     .menu { display: none; }
