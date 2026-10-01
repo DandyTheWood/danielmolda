@@ -152,8 +152,12 @@ main > .main[hidden] {
     #it_stuff .project-details,
     #it_stuff .project-details::after,
     .project-read-more,
-    .project-arrow {
+    .project-arrow,
+    .home-continue-entry,
+    .home-continue,
+    .home-continue-arrow {
         transition: none;
+        animation: none;
     }
 }
 
@@ -237,8 +241,22 @@ main > .main[hidden] {
 }
 
 .d2 {
-    width: 35%;
+    width: 100%;
     padding: 2%;
+}
+
+.home-portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    width: 35%;
+}
+
+.home-portrait > .d2 {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
 }
 
 .d2 img {

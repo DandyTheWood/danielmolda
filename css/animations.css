@@ -37,6 +37,11 @@
     to { transform: scale(1); }
 }
 
+@keyframes home-continue-pulse {
+    0%, 36%, 100% { transform: scale(1); }
+    18% { transform: scale(1.06); }
+}
+
 @keyframes link-gradient-slide {
     0%   { background-position: 0% 50%; filter: brightness(1); }
     50%  { background-position: 100% 50%; filter: brightness(1.05); }

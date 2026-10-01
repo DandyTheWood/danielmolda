@@ -179,10 +179,58 @@
     outline: none;
 }
 
+.gh-button:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 4px;
+}
+
 .gh-button.glow {
     text-shadow: 0 0 8px rgba(255,255,255,0.06),
                  0 0 20px rgba(0,180,255,0.12),
                  0 0 32px rgba(255,60,60,0.08);
+}
+
+.home-continue-entry {
+    display: flex;
+    justify-content: center;
+    animation: fly-in 1.5s ease-out 2s both;
+}
+
+.home-continue {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.25rem 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    opacity: 0.88;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+    animation: home-continue-pulse 5s ease-in-out 2.3s infinite both;
+}
+
+.home-continue:link,
+.home-continue:visited,
+.home-continue:hover,
+.home-continue:focus,
+.home-continue:active {
+    color: var(--accent-cyan);
+    text-decoration: none;
+}
+
+.home-continue:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 4px;
+}
+
+.home-continue-arrow {
+    display: inline-block;
+    flex: 0 0 0.55em;
+    width: 0.55em;
+    height: 0.55em;
+    border-top: 0.16em solid currentColor;
+    border-right: 0.16em solid currentColor;
+    border-radius: 0.04em;
+    transform: translateX(-0.05em) rotate(45deg);
 }
 
 #image_animation {

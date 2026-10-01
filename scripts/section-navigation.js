@@ -63,6 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function updateActiveNavigationIndicator() {
+        const activeLink = document.querySelector('.desktop-navigation a[aria-current="page"]');
+        const desktopNavigation = document.querySelector('.desktop-navigation');
+        if (!activeLink || !desktopNavigation) return;
+
+        desktopNavigation.style.setProperty('--active-link-width', `${activeLink.offsetWidth}px`);
+        desktopNavigation.style.setProperty('--active-link-offset', `${activeLink.offsetLeft}px`);
+    }
+
     function initializeProjectCards() {
         const projects = document.querySelectorAll('#it_stuff > .d3[id]');
 
@@ -127,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        updateActiveNavigationIndicator();
+
         if (updateHistory && window.location.hash !== `#${targetId}`) {
             window.history.pushState(null, '', `#${targetId}`);
         }
@@ -178,6 +189,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('popstate', syncWithLocation);
     window.addEventListener('hashchange', syncWithLocation);
+    window.addEventListener('resize', updateActiveNavigationIndicator);
+    const desktopNavigation = document.querySelector('.desktop-navigation');
+    if (desktopNavigation && 'ResizeObserver' in window) {
+        new ResizeObserver(updateActiveNavigationIndicator).observe(desktopNavigation);
+    }
     initializeProjectCards();
     syncWithLocation();
 });

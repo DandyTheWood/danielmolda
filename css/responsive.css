@@ -77,6 +77,11 @@
         padding: 2%;
     }
 
+    .home-portrait {
+        width: 100%;
+        max-width: 400px;
+    }
+
     .d2 img {
         max-width: 100%;
         width: 100%;
@@ -138,6 +143,10 @@
         width: 100%;
         max-width: 100%;
         padding: 2%;
+    }
+
+    .home-portrait {
+        max-width: 100%;
     }
 
     .d2 img {
@@ -297,6 +306,11 @@
         padding: 1.5rem;
     }
 
+    .home-continue {
+        gap: 0.55rem;
+        font-size: 1.3rem;
+    }
+
     .d1, .d2 {
         width: 90%;
         padding: 1.5%;
@@ -305,9 +319,13 @@
     }
 
     .d2 {
-        width: 90%;
+        width: 100%;
         max-width: 100%;
         padding: 1.5rem;
+    }
+
+    .home-portrait {
+        width: 90%;
     }
 
     .d2 img {
