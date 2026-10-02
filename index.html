@@ -34,6 +34,7 @@
     <script src="scripts/menu.js" defer></script>
     <script src="scripts/section-navigation.js?v=20261001-2" defer></script>
     <script src="scripts/lightbox.js" defer></script>
+    <script src="scripts/portrait-flip.js" defer></script>
 
     <body>
         <div id="loader-overlay">
@@ -104,6 +105,17 @@
 
         <main>
             <section class="main" id="index">
+                <div class="home-portrait">
+                    <div class="d2">
+                        <button id="image_animation" class="portrait-flip" type="button" aria-label="Show funny photo" aria-pressed="false">
+                            <span class="portrait-flip-inner">
+                                <img class="portrait-flip-face portrait-flip-face--front" src="images/my_photo/my_photo_serious.webp" alt="Serious portrait of Daniel Molda" loading="eager" fetchpriority="high" decoding="async">
+                                <img class="portrait-flip-face portrait-flip-face--back" src="images/my_photo/my_photo_fun.webp" alt="Funny portrait of Daniel Molda" loading="eager" fetchpriority="high" decoding="async" aria-hidden="true">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="welcome">
                     <h2 id="welcome_animation">Welcome to my personal website</h2>
 
@@ -148,12 +160,6 @@
                             Continue
                             <span class="home-continue-arrow" aria-hidden="true"></span>
                         </a>
-                    </div>
-                </div>
-
-                <div class="home-portrait">
-                    <div class="d2">
-                        <img id="image_animation" src="images/my_photo/my_photo_serious.webp" alt="Portrait of Daniel Molda" fetchpriority="high" decoding="async">
                     </div>
                 </div>
             </section>

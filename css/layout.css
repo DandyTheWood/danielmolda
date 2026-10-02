@@ -250,7 +250,8 @@ main > .main[hidden] {
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
-    width: 35%;
+    width: 26%;
+    max-width: 300px;
 }
 
 .home-portrait > .d2 {
@@ -266,6 +267,106 @@ main > .main[hidden] {
     border: 3px solid var(--accent-cyan-opaque);
     border-radius: 12px;
     padding: 0;
+}
+
+.portrait-flip {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.portrait-fireworks {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.portrait-firework-burst {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+.portrait-firework-spark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 13px;
+    border-radius: 50%;
+    animation: portrait-firework 850ms ease-out forwards;
+}
+
+.portrait-firework-spark.is-blue {
+    background: #168bff;
+    box-shadow: 0 0 8px #168bff;
+}
+
+.portrait-firework-spark.is-red {
+    background: #ff3c54;
+    box-shadow: 0 0 8px #ff3c54;
+}
+
+@keyframes portrait-firework {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0) scaleY(0.45);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--distance))) scaleY(0);
+    }
+}
+
+.portrait-flip-inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+.portrait-flip.is-flipped .portrait-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.d2 .portrait-flip-face {
+    width: 100%;
+    max-width: none;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.d2 .portrait-flip-face--back {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+.portrait-flip:focus-visible {
+    outline: 3px solid var(--accent-cyan-opaque);
+    outline-offset: 5px;
+    border-radius: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portrait-flip-inner {
+        transition: none;
+    }
+
+    .portrait-fireworks {
+        display: none;
+    }
 }
 
 .d3, .d4 {

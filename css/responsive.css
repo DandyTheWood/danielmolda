@@ -79,7 +79,7 @@
 
     .home-portrait {
         width: 100%;
-        max-width: 400px;
+        max-width: 300px;
     }
 
     .d2 img {
@@ -146,7 +146,8 @@
     }
 
     .home-portrait {
-        max-width: 100%;
+        width: 90%;
+        max-width: 300px;
     }
 
     .d2 img {
