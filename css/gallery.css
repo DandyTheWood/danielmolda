@@ -62,6 +62,14 @@
     transform: translate(-50%, calc(-50% - 2px)) rotate(180deg);
 }
 
+@media (max-width: 480px) {
+    #photography .gallery-read-more {
+        width: 2.75rem;
+        height: 2.75rem;
+        touch-action: manipulation;
+    }
+}
+
 #photography .gallery-grid a {
     display: block;
     align-self: start;

@@ -165,8 +165,8 @@ main > .main[hidden] {
     .project-read-more {
         --project-arrow-stroke: 4.5px;
         --project-circle-stroke: 2.625px;
-        width: 2.25rem;
-        height: 2.25rem;
+        width: 2.75rem;
+        height: 2.75rem;
     }
 
     .project-arrow {
@@ -193,7 +193,7 @@ main > .main[hidden] {
     }
 
     #it_stuff .project-card:not(.is-expanded) .project-read-more {
-        margin-top: -2.625rem;
+        margin-top: -2.75rem;
     }
 }
 
