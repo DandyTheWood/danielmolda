@@ -63,6 +63,128 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function setGalleryExpanded(card, expanded) {
+        const details = card?.querySelector('.gallery-details');
+        const button = card?.querySelector('.gallery-read-more');
+        const heading = card?.querySelector(':scope > h2');
+        if (!details || !button || !heading || card.classList.contains('is-expanded') === expanded) return;
+
+        const currentHeight = details.getBoundingClientRect().height;
+        const previewHeight = Number.parseFloat(
+            getComputedStyle(details).getPropertyValue('--gallery-preview-height')
+        );
+        details.style.maxHeight = `${currentHeight}px`;
+        details.offsetHeight;
+        card.classList.toggle('is-expanded', expanded);
+        details.style.maxHeight = `${expanded ? details.scrollHeight : previewHeight}px`;
+        details.inert = !expanded;
+        button.setAttribute('aria-expanded', String(expanded));
+        button.setAttribute(
+            'aria-label',
+            `${expanded ? 'Show less of' : 'Show more of'} ${heading.textContent.trim()}`
+        );
+
+        if (!expanded) {
+            window.requestAnimationFrame(() => {
+                const navigation = document.querySelector('nav');
+                const top = card.getBoundingClientRect().top + window.scrollY
+                    - (navigation?.getBoundingClientRect().height || 0)
+                    - 16;
+                window.scrollTo({
+                    top: Math.max(0, top),
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+                });
+            });
+        }
+
+        window.clearTimeout(details.transitionCleanup);
+        details.transitionCleanup = window.setTimeout(() => {
+            details.style.maxHeight = '';
+        }, 1000);
+    }
+
+    function expandGalleryForTarget(targetId) {
+        const target = document.getElementById(targetId);
+        const card = target?.closest('#photography .gallery-section');
+        if (card) setGalleryExpanded(card, true);
+    }
+
+    function initializeGalleryCards() {
+        document.querySelectorAll('#photography .gallery-section').forEach((card, index) => {
+            const heading = card.querySelector(':scope > h2');
+            const details = card.querySelector(':scope > .gallery-details');
+            if (!heading || !details) return;
+
+            details.id = `gallery-details-${heading.id || index + 1}`;
+            details.inert = true;
+
+            const button = document.createElement('button');
+            button.className = 'project-read-more gallery-read-more';
+            button.type = 'button';
+            button.setAttribute('aria-controls', details.id);
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-label', `Show more of ${heading.textContent.trim()}`);
+
+            const arrow = document.createElement('span');
+            arrow.className = 'project-arrow';
+            arrow.setAttribute('aria-hidden', 'true');
+            button.append(arrow);
+            details.after(button);
+
+            button.addEventListener('click', () => {
+                setGalleryExpanded(card, button.getAttribute('aria-expanded') !== 'true');
+            });
+
+            details.addEventListener('transitionend', event => {
+                if (event.target === details && event.propertyName === 'max-height') {
+                    window.clearTimeout(details.transitionCleanup);
+                    details.style.maxHeight = '';
+                }
+            });
+        });
+    }
+
+    function initializeGalleryMasonry() {
+        const grids = document.querySelectorAll('#photography .gallery-grid');
+
+        function updateItemSize(image) {
+            const item = image.closest('.gallery-link');
+            const grid = item?.closest('.gallery-grid');
+            if (!item || !grid) return;
+
+            const itemHeight = item.getBoundingClientRect().height;
+            if (!itemHeight) return;
+
+            const styles = getComputedStyle(grid);
+            const rowHeight = Number.parseFloat(styles.gridAutoRows);
+            const itemGap = Number.parseFloat(styles.columnGap);
+            if (!rowHeight) return;
+
+            const rowSpan = Math.ceil((itemHeight + itemGap) / rowHeight);
+            const rowEnd = `span ${rowSpan}`;
+            if (item.style.gridRowEnd !== rowEnd) {
+                item.style.gridRowEnd = rowEnd;
+            }
+        }
+
+        grids.forEach(grid => {
+            const images = grid.querySelectorAll('img');
+            images.forEach(image => {
+                image.addEventListener('load', () => updateItemSize(image));
+                if (image.complete) updateItemSize(image);
+
+                if ('ResizeObserver' in window) {
+                    const observer = new ResizeObserver(() => updateItemSize(image));
+                    observer.observe(image);
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            grids.forEach(grid => grid.querySelectorAll('img').forEach(updateItemSize));
+        }, { passive: true });
+    }
+
     function updateActiveNavigationIndicator() {
         const activeLink = document.querySelector('.desktop-navigation a[aria-current="page"]');
         const desktopNavigation = document.querySelector('.desktop-navigation');
@@ -156,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetId = window.location.hash.slice(1);
         const section = (targetId && sectionForTarget(targetId)) || sections[0];
         expandProjectForTarget(targetId);
+        expandGalleryForTarget(targetId);
         activateSection(section, targetId || section.id);
     }
 
@@ -175,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         expandProjectForTarget(targetId);
+        expandGalleryForTarget(targetId);
         activateSection(section, targetId, true);
 
         if (dropdown && dropdown.contains(link) && !(nestedMenu && link.parentElement === nestedMenu)) {
@@ -194,6 +318,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (desktopNavigation && 'ResizeObserver' in window) {
         new ResizeObserver(updateActiveNavigationIndicator).observe(desktopNavigation);
     }
+    initializeGalleryMasonry();
+    initializeGalleryCards();
     initializeProjectCards();
     syncWithLocation();
 });

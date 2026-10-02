@@ -24,6 +24,9 @@
     position: absolute;
     top: 30px;
     right: 40px;
+    padding: 0;
+    border: 0;
+    background: transparent;
     color: white;
     font-size: 40px;
     font-weight: bold;
@@ -31,6 +34,7 @@
     transition: color 0.2s ease;
     z-index: 1001;
     user-select: none;
+    appearance: none;
 }
 
 .lightbox-close:hover {

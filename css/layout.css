@@ -315,6 +315,11 @@ main > .main[hidden] {
     box-shadow: 0 0 8px #ff3c54;
 }
 
+.portrait-firework-spark.is-white {
+    background: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
 @keyframes portrait-firework {
     from {
         opacity: 1;

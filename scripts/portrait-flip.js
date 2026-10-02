@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let index = 0; index < 24; index += 1) {
                 const spark = document.createElement('span');
                 spark.className = 'portrait-firework-spark';
-                spark.classList.add(index % 2 === 0 ? 'is-blue' : 'is-red');
-                spark.style.setProperty('--angle', `${index * 15}deg`);
-                spark.style.setProperty('--distance', `${42 + (index % 4) * 9}px`);
+                const color = ['is-blue', 'is-red', 'is-white'][Math.floor(Math.random() * 3)];
+                spark.classList.add(color);
+                spark.style.setProperty('--angle', `${Math.random() * 360}deg`);
+                spark.style.setProperty('--distance', `${42 + Math.random() * 36}px`);
                 burst.append(spark);
             }
 

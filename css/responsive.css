@@ -109,10 +109,6 @@
         gap: 1.5rem;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 1.2rem;
-    }
 }
 
 /* ============================================
@@ -218,10 +214,6 @@
         font-size: 28px;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
 }
 
 /* ============================================
@@ -393,19 +385,4 @@
         font-size: 24px;
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-        width: 100%;
-        padding: 0;
-    }
-
-    #photography .image-wrapper {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    #photography .image-wrapper img {
-        width: 100%;
-    }
 }
