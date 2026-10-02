@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#08090d">
+        <title>404 - Page not found | Daniel Molda</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="icon" href="/favicon/favicon.ico">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="stylesheet" href="/css/variables.css">
+        <link rel="stylesheet" href="/css/not-found.css?v=20261002-27">
+        <script>
+            const target = window.location.pathname.split('/').filter(Boolean).at(-1);
+            const routeTargets = {
+                index: 'index',
+                aboutme: 'aboutme',
+                'it-projects': 'it_stuff',
+                photography: 'photography',
+                proxmox: 'it_stuff',
+                linux: 'it_stuff',
+                'adguard-dns': 'it_stuff',
+                adguard_dns: 'it_stuff',
+                zabbix: 'it_stuff',
+                twingate: 'it_stuff',
+                atari: 'it_stuff',
+                'tails-os': 'it_stuff',
+                tails: 'it_stuff',
+                tailsos: 'it_stuff',
+                'web-server': 'it_stuff',
+                web_server: 'it_stuff',
+                portraits: 'photography',
+                dover: 'photography',
+                scotland: 'photography',
+                croatia: 'photography',
+                trnava: 'photography',
+                'product-photography': 'photography',
+                products: 'photography',
+                other: 'photography'
+            };
+            if (routeTargets[target]) {
+                const targetId = routeTargets[target];
+                const destination = new URL('/index.html', window.location.origin);
+                destination.search = window.location.search;
+                destination.hash = targetId;
+                window.location.replace(destination.href);
+            }
+        </script>
+    </head>
+    <body>
+        <main class="not-found">
+            <section class="error-card" aria-labelledby="error-title">
+                <div class="error-copy">
+                    <p class="eyebrow"><span></span> ERROR 404</p>
+                    <h1 id="error-title">Well, this is <span>awkward.</span></h1>
+                    <p class="description">The page you're looking for doesn't exist or has been moved. But you have found an easteregg!</p>
+
+                    <a class="home-link" href="/">
+                        <span class="home-link-arrow" aria-hidden="true"></span>
+                        Go to homepage
+                    </a>
+                </div>
+                <section class="terminal" aria-label="Interactive terminal demo">
+                    <div class="terminal-bar" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                        <span class="terminal-title">daniel@debian: ~</span>
+                    </div>
+                    <div class="terminal-screen" aria-label="Terminal session">
+                        <div class="terminal-history" aria-live="polite" aria-relevant="additions">
+                            <p class="terminal-command"><span class="prompt-user">daniel@debian</span><span class="prompt-path">:~</span><span class="prompt-symbol">$</span> ls</p>
+                            <p class="terminal-output">help.md</p>
+                            <p class="terminal-command"><span class="prompt-user">daniel@debian</span><span class="prompt-path">:~</span><span class="prompt-symbol">$</span> find ./page</p>
+                            <p class="terminal-output">find: './page': No such file or directory</p>
+                        </div>
+                        <form class="terminal-input-line" autocomplete="off">
+                            <label class="terminal-prompt" for="terminal-input">
+                                <span class="prompt-user">daniel@debian</span><span class="prompt-path">:~</span><span class="prompt-symbol">$</span>
+                            </label>
+                            <input id="terminal-input" class="terminal-input" name="command" type="text" maxlength="256" spellcheck="false" aria-label="Enter a simulated Linux command">
+                            <span class="cursor" aria-hidden="true"></span>
+                        </form>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <script src="/scripts/not-found-terminal.js?v=20261002-10" defer></script>
+    </body>
+</html>

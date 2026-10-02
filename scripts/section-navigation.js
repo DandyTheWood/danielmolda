@@ -1,6 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = Array.from(document.querySelectorAll('main > section.main'));
-    const navigationLinks = document.querySelectorAll('.desktop-navigation a[href^="#"]');
+    const internalLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
+    internalLinks.forEach(link => {
+        link.dataset.sectionTarget = link.getAttribute('href').slice(1);
+    });
+    const sectionTargets = new Set(internalLinks.map(link => link.dataset.sectionTarget));
+    const sectionPathSlugs = {
+        it_stuff: 'it-projects',
+        photography: 'photography'
+    };
+    const targetForPathSlug = slug => Object.entries(sectionPathSlugs)
+        .find(([, pathSlug]) => pathSlug === slug)?.[0]
+        || (sectionTargets.has(slug) ? slug : null);
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    const lastPathSegment = pathSegments.at(-1);
+    const baseSegments = targetForPathSlug(lastPathSegment) || lastPathSegment === 'index.html'
+        ? pathSegments.slice(0, -1)
+        : pathSegments;
+    const basePath = `/${baseSegments.join('/')}`;
+    const pageUrlForTarget = targetId => {
+        const parentSectionId = document.getElementById(targetId)
+            ?.closest('main > section.main')?.id || targetId;
+        const sectionPath = parentSectionId === 'index'
+            ? basePath
+            : `${basePath === '/' ? '' : basePath}/${encodeURIComponent(sectionPathSlugs[parentSectionId] || parentSectionId)}`;
+        return `${sectionPath || '/'}${window.location.search}`;
+    };
+    internalLinks.forEach(link => {
+        link.href = pageUrlForTarget(link.dataset.sectionTarget);
+    });
+    const navigationLinks = document.querySelectorAll('.desktop-navigation a[data-section-target]');
     const dropdown = document.querySelector('.dropdown');
     const dropdownButton = document.querySelector('.dropdown-button');
 
@@ -251,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navigationLinks.forEach(link => {
-            if (link.hash === `#${section.id}`) {
+            if (link.dataset.sectionTarget === section.id) {
                 link.setAttribute('aria-current', 'page');
             } else {
                 link.removeAttribute('aria-current');
@@ -260,8 +289,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateActiveNavigationIndicator();
 
-        if (updateHistory && window.location.hash !== `#${targetId}`) {
-            window.history.pushState(null, '', `#${targetId}`);
+        if (updateHistory && window.history.state?.sectionTarget !== targetId) {
+            window.history.pushState(
+                { sectionTarget: targetId },
+                '',
+                pageUrlForTarget(targetId)
+            );
         }
 
         window.requestAnimationFrame(() => {
@@ -274,19 +307,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function syncWithLocation() {
-        const targetId = window.location.hash.slice(1);
+    function syncWithLocation(event) {
+        const pathTarget = pathSegmentsTarget();
+        const targetId = event?.state?.sectionTarget
+            || window.location.hash.slice(1)
+            || pathTarget
+            || window.history.state?.sectionTarget;
         const section = (targetId && sectionForTarget(targetId)) || sections[0];
+        if (window.location.hash || (pathTarget && !window.history.state?.sectionTarget)) {
+            window.history.replaceState(
+                { ...window.history.state, sectionTarget: targetId || section.id },
+                '',
+                pageUrlForTarget(targetId || section.id)
+            );
+        }
         expandProjectForTarget(targetId);
         expandGalleryForTarget(targetId);
         activateSection(section, targetId || section.id);
     }
 
+    function pathSegmentsTarget() {
+        return targetForPathSlug(window.location.pathname.split('/').filter(Boolean).at(-1));
+    }
+
     document.addEventListener('click', event => {
-        const link = event.target.closest('a[href^="#"]');
+        const link = event.target.closest('a[data-section-target]');
         if (!link) return;
 
-        const targetId = link.hash.slice(1);
+        const targetId = link.dataset.sectionTarget;
         const section = sectionForTarget(targetId);
         if (!section) return;
 
