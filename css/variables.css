@@ -33,9 +33,10 @@
     --link-grad-speed: 11s;
 
     /* Social / brand */
-    --social-icon-color: #4d4d4d;
-    --social-icon-bg: #ffffff;
+    --social-icon-color: #ffffff;
+    --social-icon-bg: rgba(0, 0, 0, 0.25);
     --social-github-bg: #24262a;
+    --social-linkedin-bg: #0a66c2;
     --social-youtube: #ff0000;
     --instagram-stop-1: #405de6;
     --instagram-stop-2: #5b51db;

@@ -300,6 +300,9 @@ document.addEventListener('DOMContentLoaded', () => {
         expandProjectForTarget(targetId);
         expandGalleryForTarget(targetId);
         activateSection(section, targetId, true);
+        if (section.id === 'index') {
+            window.startHomeEntrance?.();
+        }
 
         if (dropdown && dropdown.contains(link) && !(nestedMenu && link.parentElement === nestedMenu)) {
             dropdown.classList.remove('open');
@@ -318,6 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (desktopNavigation && 'ResizeObserver' in window) {
         new ResizeObserver(updateActiveNavigationIndicator).observe(desktopNavigation);
     }
+    document.fonts?.ready.then(updateActiveNavigationIndicator);
     initializeGalleryMasonry();
     initializeGalleryCards();
     initializeProjectCards();

@@ -7,9 +7,42 @@
     padding: 4%;
     margin-top: 0;
     width: 100%;
+    animation: smooth_appear 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 1025px) {
+    #index.main {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        justify-items: center;
+        gap: clamp(2rem, 6vw, 6rem);
+        padding: clamp(3rem, 7vh, 6rem) clamp(4rem, 9vw, 10rem);
+    }
+
+    #index .home-portrait,
+    #index .welcome {
+        width: 100%;
+    }
+
+    #index .welcome {
+        max-width: 42rem;
+        padding: 2rem;
+    }
+
+    #index #welcome_animation {
+        max-width: clamp(20rem, 26vw, 22rem);
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        line-height: 1.3;
+        text-wrap: balance;
+    }
 }
 
 main > .main[hidden] {
+    display: none;
+}
+
+main > #index.main[hidden] {
     display: none;
 }
 
@@ -210,15 +243,11 @@ main > .main[hidden] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: smooth_appear 2s ease-out;
+    animation: smooth_appear 650ms ease-out;
 }
 
 #welcome_animation {
-    animation: smooth_appear 2s ease-out;
-}
-
-#image_animation {
-    animation: fly-in 2s ease-out forwards;
+    animation: smooth_appear 650ms ease-out;
 }
 
 .d1, .d2 {
@@ -233,7 +262,7 @@ main > .main[hidden] {
     width: 45%;
     font-size: 1.2rem;
     line-height: 1.6;
-    animation: smooth_appear 2.3s ease-out;
+    animation: smooth_appear 650ms ease-out;
     color: var(--text-p);
     display: flex;
     justify-content: center;
@@ -365,6 +394,19 @@ main > .main[hidden] {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .main,
+    .welcome,
+    #welcome_animation,
+    .d1,
+    .d2,
+    .d3,
+    .d4,
+    body.home-entrance #index #image_animation,
+    body.home-entrance #index .socials,
+    body.home-entrance #index .home-continue-entry,
+    body.home-entrance #index .home-continue {
+        animation: none;
+    }
     .portrait-flip-inner {
         transition: none;
     }
@@ -383,15 +425,22 @@ main > .main[hidden] {
     -moz-border-radius: 15px;
     box-shadow: 0px 0px 5% var(--shadow-glow);
     width: 90%;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, calc(0.8rem + 0.9vw), 1.5rem);
     line-height: 1.8;
-    animation: smooth_appear 3s ease-out;
+    animation: smooth_appear 650ms ease-out;
     color: var(--text-p);
 }
 
 .d3 h1 {
+    font-size: clamp(1.4rem, calc(1.1rem + 1.4vw), 2rem);
     text-align: center;
     margin-bottom: 1rem;
+    text-wrap: balance;
+}
+
+.d3 h2 {
+    font-size: clamp(1.2rem, calc(1rem + 1vw), 1.5rem);
+    text-wrap: balance;
 }
 
 .d3 > img,

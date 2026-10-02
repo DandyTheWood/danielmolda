@@ -1,6 +1,5 @@
 nav {
-    position: fixed;
-    left: 0;
+    position: sticky;
     top: 0;
     width: 100%;
     padding: 1.5% 5%;
@@ -48,10 +47,12 @@ nav {
 
 .desktop-navigation::after {
     position: absolute;
-    bottom: 0.65rem;
+    z-index: 1;
+    bottom: 0.4rem;
     left: 0;
     width: var(--active-link-width, 0);
-    height: 2px;
+    height: 3px;
+    border-radius: 999px;
     background-color: var(--accent-cyan);
     content: "";
     pointer-events: none;
@@ -253,7 +254,7 @@ footer {
     z-index: 10;
 }
 
-@media (max-width: 851px) {
+@media (max-width: 1024px) {
     .desktop-navigation {
         display: none;
     }
